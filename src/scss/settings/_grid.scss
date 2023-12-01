@@ -1,0 +1,42 @@
+.container{
+
+    width: 100%;
+    max-width: $maxContainerWidth;
+    margin-left: auto;
+    margin-right: auto;
+
+    &_wide{
+        max-width: $maxContainerWidthWide;
+    }
+
+    &_fullWidth{
+        max-width: none;
+    }
+
+}
+
+.colGr{
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    flex-wrap: wrap;
+    gap: 40px;
+
+    & > &__col{
+
+        @mixin grid-column-settings(){
+            grid-column-start: auto;
+            
+        }
+
+        @for $i from 1 through 12{
+
+            &_#{$i}{
+                grid-column-end: span $i;
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,23 @@
+.___pasSearchForm{
+
+    position: relative;
+
+    &__submit{
+
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        padding: 0;
+        opacity: 0.6;
+
+        &:hover{
+            opacity: 1;
+        }
+        
+    }
+
+}
+

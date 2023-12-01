@@ -1,0 +1,42 @@
+.___pasAutocomplete{
+
+    position: relative;
+
+    &__input{
+        width: 290px;
+        height: 36px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 0.875rem;
+    }
+    
+    &__options{
+
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        z-index: 150;
+
+        &Item{
+
+            display: block;
+            font-size: 0.75rem;
+            color: black;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+
+            &:nth-child(even){
+                background-color: rgb(245,245,245);
+            }
+
+            &:hover{
+                background-color: rgb(0, 123, 180);
+                color: white;
+            }
+        }
+    }
+
+}

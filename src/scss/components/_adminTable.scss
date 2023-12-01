@@ -1,0 +1,92 @@
+.___pasTable{
+
+    &__entry{
+
+        background-color: white;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 5px 0px rgba(0,0,0,0.03);
+
+        &:hover,
+        &.open{
+
+            box-shadow: 0 0 5px 0px rgba(0,0,0,0.1);
+
+        }
+
+        &.open{
+
+            .___pasTable__entryBody{
+                max-height: 2000px;
+                height: auto;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                opacity: 1;
+            }
+        
+        }
+
+        &Header{
+            background-color: white;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            cursor: pointer;
+        }
+
+        &Body{
+            background-color: rgb(245, 247, 251);
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            max-height: 0px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        &Title{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+        }
+
+        &Subtitle{
+            margin: 0;
+        }
+
+    }
+
+    &__header{
+
+        min-height: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 30px;
+        padding-right: 30px;
+        align-items: center;
+        background-color: rgb(245, 247, 251);
+        box-shadow: none;
+
+    }
+
+    &__column{
+
+        &_header{
+            font-weight: 600;
+            color: rgb(146, 151, 165);
+        }
+
+        &_spacedVertically{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+    }
+
+}
