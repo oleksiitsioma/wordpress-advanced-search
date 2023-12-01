@@ -19,12 +19,30 @@ $(entryOpenableHeaders).on( 'click' , function() {
     
     $(parentSiblings).removeClass('open');
 
-    
-
-    // $('.___pasTable__entry').removeClass('open');
-
-
-    // $(this).closest('.___pasTable__entry').toggleClass('open');
-
-
 } )
+
+const postTypeDropdowns = $('select[data-dropdown-content="post-types"]');
+
+const dynamicPostTypeDropdown = ( select ) => {
+
+    const val = $(select).val();
+
+    const currentTableEntry = $(select).closest('.___pasTable__entry');
+
+    const targetSelectorContainer = $(currentTableEntry).find('.___pasTable__column[data-column-content="post-dropdowns"]')
+
+    const selectors = $(targetSelectorContainer).find(`select`);
+
+    const targetSelector = $(targetSelectorContainer).find(`select[data-dropdown-content="${val}-posts"]`);
+    
+    $(selectors).hide();
+
+    $(targetSelector).show();
+
+}
+
+dynamicPostTypeDropdown( postTypeDropdowns );
+
+$(postTypeDropdowns).on( 'input' , function () {
+    dynamicPostTypeDropdown( this );
+})
