@@ -51,9 +51,9 @@ function ___pas_admin_menu_posts_mapping(){ ?>
 
     <?php if( isset($_POST['submit']) ){
 
-        $post_name      = $_POST['post-name'];
-        $relation_type  = $_POST['mapping-post-type'];
-        $post_id        = $_POST['post-id'];
+        $post_name  = $_POST['mapping-post-name'];
+        $post_type  = $_POST['mapping-post-type'];
+        $post_id    = $_POST['mapping-post-id'];
 
         $mappings = $wpdb->get_results("
             SELECT *
@@ -65,14 +65,14 @@ function ___pas_admin_menu_posts_mapping(){ ?>
             $wpdb->query("
                 UPDATE {$wpdb->prefix}advanced_search_mapping
                 SET engine_name     = 'support-search',
-                relation_type   = '{$relation_type}',
+                post_type   = '{$post_type}',
                 post_reference  = '{$post_id}'
                 WHERE import_post_name = '{$post_name}'
             ");
         } else {
             $wpdb->query("
-                INSERT INTO {$wpdb->prefix}advanced_search_mapping ( engine_name, relation_type, import_post_name, post_reference)
-                VALUES ( 'support-search' , '{$relation_type}', '{$post_name}' , '{$post_id}' )
+                INSERT INTO {$wpdb->prefix}advanced_search_mapping ( engine_name, post_type, import_post_name, post_reference)
+                VALUES ( 'support-search' , '{$post_type}', '{$post_name}' , '{$post_id}' )
             ");
         }
     
@@ -101,21 +101,38 @@ function ___pas_admin_menu_posts_mapping(){ ?>
                 <div class="colGr__col_2 ___pasTable__column ___pasTable__column_header"></div>
             </div>
 
-            <?php foreach ($posts as $item) { ?>
+            <?php
+            
+            foreach ($posts as $item) {
+                
+            ?>
 
                 <form class="___pasTable__entry" action="#" method="POST">
                     <div class="___pasTable__entryHeader colGr">
-                        <div class="colGr__col_3 ___pasTable__column">
+                        <div class="colGr__col_3 ___pasTable__column post-name">
                             <h2 class="___pasTable__entryTitle"><?php echo $item; ?></h2>
+                            <input type="text" name="mapping-post-name" value="<?php echo $item; ?>">
                         </div>
                         <div class="colGr__col_3 ___pasTable__column">
+                            <?php
+
+                            ?>
                             <select class="___pasInputUnit__input" name="mapping-post-type" data-dropdown-content="post-types">
-                                <option value="document" selected>Support Document</option>
-                                <option value="post">Post</option>
-                                <option value="page">Page</option>
+
+                                <?php
+                                
+                                $postTypes = [ 'document' , 'post' , 'page' ];
+
+                                foreach ($postTypes as $postType) {
+                                    
+                                    echo '<option value="' . $postType . '">' . $postType . '</option>';
+
+                                };
+
+                                ?>
                             </select>
                         </div>
-                        <div class="colGr__col_4 ___pasTable__column" data-column-content="post-dropdowns">
+                        <div class="colGr__col_4 ___pasTable__column post-type-select-container" data-column-content="post-dropdowns">
 
 
                             <?php 
@@ -131,7 +148,7 @@ function ___pas_admin_menu_posts_mapping(){ ?>
 
                             ?>
 
-                                <select class="___pasInputUnit__input" name="mapping-post-type" data-dropdown-content="document-posts">
+                                <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="document-posts">
 
                                     <option selected disabled>Choose Support Document</option>
 
@@ -160,7 +177,7 @@ function ___pas_admin_menu_posts_mapping(){ ?>
 
                             ?>
 
-                                <select class="___pasInputUnit__input" name="mapping-post-type" data-dropdown-content="post-posts">
+                                <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="post-posts">
 
                                     <option selected disabled>Choose post</option>
 
@@ -187,7 +204,7 @@ function ___pas_admin_menu_posts_mapping(){ ?>
 
                         ?>
 
-                            <select class="___pasInputUnit__input" name="mapping-post-type" data-dropdown-content="page-posts">
+                            <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="page-posts">
 
                                 <option selected disabled>Choose page</option>
 
@@ -202,7 +219,7 @@ function ___pas_admin_menu_posts_mapping(){ ?>
                         <?php wp_reset_postdata(  ); } ?>
                         </div>
                         <div class="colGr__col_2 ___pasTable__column ___pasTable__column_header">
-                            <input type="submit" value="submit">
+                            <input type="submit" name="submit" value="submit">
                         </div>
                     </div>
                 </form>
@@ -260,46 +277,6 @@ function ___pas_admin_menu_posts_mapping(){ ?>
 
 
 
-<script>
-    
-    
-    jQuery(document).ready(function($) {
-        
-        const mappings = <?php echo $mappingsJSON ; ?> ;
-
-        mappings.forEach(el => {
-            
-            const postName      = el.import_post_name;
-            const relationType  = el.relation_type
-            const tablePostItem = $('.post-name');
-            
-            for (let i = 0; i < tablePostItem.length; i++) {
-
-                const tablePostItemSpan = $(tablePostItem[i]).find('span');
-                
-                if( $(tablePostItemSpan).text() === postName ){
-
-                    const tablePostSelectContainer = $(tablePostItem[i]).siblings('.post-select-container');
-                    const tablePostSelectOptions = $(tablePostSelectContainer).find('option');
-                    $(tablePostSelectOptions).removeAttr('selected');
-                    const tablePostSelectCorrectOption = $(tablePostSelectContainer).find(`option[value="${el.post_reference}"]`);
-
-                    $(tablePostSelectCorrectOption).attr('selected' , 'selected');
-
-                    const tableRelationSelectContainer = $(tablePostItem[i]).siblings('.relation-type');
-                    const tableRelationSelectContainerOption = $(tableRelationSelectContainer).find(`option[value="${relationType}"]`);
-
-                    $(tableRelationSelectContainerOption).attr('selected' , 'selected');
-
-                }
-            
-               }
-
-            });
-
-        });
-
-    </script>
 
 <?php }
 

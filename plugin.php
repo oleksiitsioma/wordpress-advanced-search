@@ -42,54 +42,48 @@ function ___pas_frontend_styles(){
 
 }
 
+global $wpdb;
+$charset_collate = $wpdb->get_charset_collate();
 
-register_activation_hook( __FILE__ , '___pas_plugin_activation' );
+$enginesTableName = $wpdb->prefix . 'advanced_search_engines';
+$mappingTableName = $wpdb->prefix . 'advanced_search_mapping';
+$pairingsTableName = $wpdb->prefix . 'advanced_search_pairings';
 
-function ___pas_plugin_activation(){
+require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
-    global $wpdb;
-    $charset_collate = $wpdb->get_charset_collate();
+$sql = "CREATE TABLE $enginesTableName (
+    id mediumint(9) NOT NULL AUTO_INCREMENT,
+    engine_label TEXT NOT NULL,
+    engine_name TEXT, 
+    import_url TEXT NOT NULL,
+    PRIMARY KEY  (id)
+) $charset_collate;";    
 
-    $enginesTableName = $wpdb->prefix . 'advanced_search_engines';
-    $mappingTableName = $wpdb->prefix . 'advanced_search_mapping';
-    $pairingsTableName = $wpdb->prefix . 'advanced_search_pairings';
+dbDelta( $sql );
 
-    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-    
-    $sql = "CREATE TABLE $enginesTableName (
-        id mediumint(9) NOT NULL AUTO_INCREMENT,
-        engine_label TEXT NOT NULL,
-        engine_name TEXT, 
-        import_url TEXT NOT NULL,
-        PRIMARY KEY  (id)
-    ) $charset_collate;";    
+$mappingSql = "CREATE TABLE $mappingTableName (
+    id mediumint(9) NOT NULL AUTO_INCREMENT,
+    engine_name TEXT NOT NULL,
+    import_post_name TEXT NOT NULL,
+    post_type TEXT,
+    post_reference TEXT,
+    PRIMARY KEY  (id)
+) $charset_collate;";
 
-    dbDelta( $sql );
-    
-    $mappingSql = "CREATE TABLE $mappingTableName (
-        id mediumint(9) NOT NULL AUTO_INCREMENT,
-        engine_name TEXT NOT NULL,
-        import_post_name TEXT NOT NULL,
-        post_reference TEXT,
-        relation_type TEXT,
-        PRIMARY KEY  (id)
-    ) $charset_collate;";
+dbDelta( $mappingSql );
 
-    dbDelta( $mappingSql );
-    
-    $pairingsSql = "CREATE TABLE $pairingsTableName (
-        id mediumint(9) NOT NULL AUTO_INCREMENT,
-        engine_name TEXT NOT NULL,
-        search_query TEXT NOT NULL,
-        post_reference TEXT NOT NULL,
-        is_block_level BOOLEAN,
-        block_id TEXT, 
-        PRIMARY KEY  (id)
-    ) $charset_collate;";
+$pairingsSql = "CREATE TABLE $pairingsTableName (
+    id mediumint(9) NOT NULL AUTO_INCREMENT,
+    engine_name TEXT NOT NULL,
+    search_query TEXT NOT NULL,
+    post_reference TEXT NOT NULL,
+    is_block_level BOOLEAN,
+    block_id TEXT, 
+    PRIMARY KEY  (id)
+) $charset_collate;";
 
-    dbDelta( $pairingsSql );
+dbDelta( $pairingsSql );
 
-}
 
 require_once __DIR__ . '/inc/menu/menu.php';
 
