@@ -21,19 +21,19 @@ $(entryOpenableHeaders).on( 'click' , function() {
 
 } )
 
-const postTypeDropdowns = $('select[data-dropdown-content="post-types"]');
+const postTypeDropdowns = $('.___pasInputUnit_postType select');
 
 const dynamicPostTypeDropdown = ( select ) => {
 
     const val = $(select).val();
 
-    const currentTableEntry = $(select).closest('.___pasTable__entry');
+    const postTypeInputUnit = $(select).closest('.___pasInputUnit_postType');
 
-    const targetSelectorContainer = $(currentTableEntry).find('.___pasTable__column[data-column-content="post-dropdowns"]')
+    const postIDInputUnit = $( postTypeInputUnit ).siblings('.___pasInputUnit_postID');
 
-    const selectors = $(targetSelectorContainer).find(`select`);
+    const selectors = $(postIDInputUnit).find(`select`);
 
-    const targetSelector = $(targetSelectorContainer).find(`select[data-dropdown-content="${val}-posts"]`);
+    const targetSelector = $(postIDInputUnit).find(`select[data-dropdown-content="posts-${val}"]`);
     
     $(selectors).hide();
 
@@ -41,7 +41,12 @@ const dynamicPostTypeDropdown = ( select ) => {
 
 }
 
-dynamicPostTypeDropdown( postTypeDropdowns );
+for (let i = 0; i < postTypeDropdowns.length; i++) {
+
+    dynamicPostTypeDropdown( postTypeDropdowns[i] );
+    
+}
+
 
 $(postTypeDropdowns).on( 'input' , function () {
     dynamicPostTypeDropdown( this );

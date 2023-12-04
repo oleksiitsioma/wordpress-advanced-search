@@ -1,5 +1,9 @@
 .___pasTable{
 
+    .colGr{
+        row-gap: 20px;
+    }
+
     &__entry{
 
         background-color: white;
@@ -18,7 +22,7 @@
         &.open{
 
             .___pasTable__entryBody{
-                max-height: 2000px;
+                max-height: none;
                 height: auto;
                 padding-top: 25px;
                 padding-bottom: 25px;
@@ -48,6 +52,7 @@
             padding-right: 30px;
             padding-top: 15px;
             padding-bottom: 15px;
+            cursor: pointer;
         }
 
         &Body{

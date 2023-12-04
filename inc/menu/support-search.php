@@ -230,52 +230,8 @@ function ___pas_admin_menu_support_search(){
 
                                 <?php } ?>
 
-                                <!-- <div class="colGr__col_6 ___pasSearchUnit">
-                                    <div class="___pasInputUnit">
-                                        <label for="example-text" class="___pasInputUnit__label">Target Block</label>
-                                        <p class="___pasInputUnit__hint">Choose the target block within a post</p>
-                                        <div class="___pasDropdownOptions">
-                                            <select name="" class="___pasInputUnit__input ___pasDropdownOptions__input" id="">
-                                                <option class="___pasDropdownOptions__option">What are “wet checks” or irrigation checks?</option>
-
-                                                <?php 
-                                                
-                                                // $content        = get_post( $postID)->post_content;
-                                                // $contentBlocks  = parse_blocks( $content );
-
-                                                // foreach ($contentBlocks as $block) {
-                                                //     if( $block['blockName'] == 'kadence/accordion'){
-
-                                                //         $panes = $block['innerBlocks'];
-
-                                                //         foreach ($panes as $pane) {
-
-                                                //             $attrs	= $pane['attrs'];
-                                                //             $label = $attrs['ariaLabel'];
-
-                                                //             if( strpos( strtolower($label) , strtolower( $data[2]) ) > -1){
-
-                                                //                 echo '<option class="___pasDropdownOptions__option" selected="selected">' . $label . '</option>';
-
-                                                //             } else {
-
-                                                //                 echo '<option class="___pasDropdownOptions__option">' . $label . '</option>';
-
-                                                //             }
-
-                                                //         }
-                                                //     }
-                                                // }
-                                                
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div> -->
-
                                 <div class="colGr__col_12">
-        
-        <input type="text" name="<?php echo $pairingCounter; ?>-postID" value="<?php echo $postID; ?>" style="display: none">
+                                    <input type="text" name="<?php echo $pairingCounter; ?>-postID" value="<?php echo $postID; ?>" style="display: none">
                                 </div>
 
 

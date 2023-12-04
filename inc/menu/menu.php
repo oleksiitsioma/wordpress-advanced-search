@@ -3,6 +3,10 @@
 add_action( 'admin_menu' , '___pas_create_admin_menu' );
 
 function ___pas_create_admin_menu(){
+    
+    global $wpdb , $enginesTableName;
+    $searchEnginesSQL = "SELECT * FROM {$enginesTableName}";
+    $searchEngines = $wpdb->get_results( $searchEnginesSQL );
 
     $___pas_admin_menu_title    = 'Advanced Search';
     $___pas_admin_menu_slug     = 'advanced-search';
@@ -26,31 +30,35 @@ function ___pas_create_admin_menu(){
     
     );
 
-    load_template(
-        $_template_file = __DIR__ . '/search-mapping.php',
-        $require_once   = true,
-        $args           = array(
-            'menu-slug' => $___pas_admin_menu_slug
-        )
+    // load_template(
+    //     $_template_file = __DIR__ . '/search-mapping.php',
+    //     $require_once   = true,
+    //     $args           = array(
+    //         'menu-slug' => $___pas_admin_menu_slug
+    //     )
     
-    );
+    // );
 
-    load_template(
-        $_template_file = __DIR__ . '/blocks-mapping.php',
-        $require_once   = true,
-        $args           = array(
-            'menu-slug' => $___pas_admin_menu_slug
-        )
+    // load_template(
+    //     $_template_file = __DIR__ . '/blocks-mapping.php',
+    //     $require_once   = true,
+    //     $args           = array(
+    //         'menu-slug' => $___pas_admin_menu_slug
+    //     )
     
-    );
+    // );
 
-    load_template(
-        $_template_file = __DIR__ . '/support-search.php',
-        $require_once   = true,
-        $args           = array(
-            'menu-slug' => $___pas_admin_menu_slug
-        )
-    
-    );
+    foreach ($searchEngines as $engine) {
+
+        load_template(
+            $_template_file = __DIR__ . '/search-engine-settings.php',
+            $require_once   = true,
+            $args           = array(
+                'menu-slug' => $___pas_admin_menu_slug,
+                'engine'    => $engine
+            )
+        );
+
+    }
 
 }
