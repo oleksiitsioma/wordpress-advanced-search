@@ -1,10 +1,12 @@
 <?php 
 
-require_once( __DIR__ . '/../classes/class-SearchEngine.php' );
-require_once( __DIR__ . '/../classes/class-SearchMapping.php' );
-require_once( __DIR__ . '/../classes/class-SearchPairing.php' );
-require_once( __DIR__ . '/../settings/plugin-vars.php' );
-require_once( __DIR__ . '/../functions/functions.php' );
+global $pluginDIR;
+
+require_once( PAS_PLUGIN_DIR . 'inc/classes/class-SearchEngine.php' );
+require_once( PAS_PLUGIN_DIR . 'inc/classes/class-SearchMapping.php' );
+require_once( PAS_PLUGIN_DIR . 'inc/classes/class-SearchPairing.php' );
+require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php' );
+require_once( PAS_PLUGIN_DIR . 'inc/functions/functions.php' );
 
 $engine = $args['engine'];
 
@@ -212,7 +214,7 @@ function ___pas_admin_menu_search_settings(){
                     <?php 
 
                     load_template(
-                        $_template_file = __DIR__ . '/search-settings/mapping.php', $require_once   = true,
+                        $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/mapping.php', $require_once   = true,
                         $args           = array(
                             'mappingsSQL'               => $mappingsSQL,
                             'mappingsFromImportTitles'  => $mappingsFromImportTitles,
@@ -223,7 +225,7 @@ function ___pas_admin_menu_search_settings(){
                     );
 
                     load_template(
-                        $_template_file = __DIR__ . '/search-settings/pairings.php',
+                        $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/pairings.php',
                         $require_once   = true,
                         $args           = array(
                             'mappingsFromImport'    => $mappingsFromImport,

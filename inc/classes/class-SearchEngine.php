@@ -1,6 +1,6 @@
 <?php
 
-require_once( __DIR__ . '/../settings/plugin-vars.php');
+require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
 
 class SearchEngine {
 

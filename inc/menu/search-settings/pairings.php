@@ -9,7 +9,7 @@ $documentsArray     = $args['documentsArray'];
 $savedPairings = get_pairings();
 
 load_template(
-    $_template_file = __DIR__ . '/pairing-not-saved.php',
+    $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/pairing-not-saved.php',
     $require_once   = true,
     $args           = array(
         'mappings-from-import'  => $mappingsFromImport,
@@ -29,7 +29,7 @@ if( $savedPairings ){
     echo '<br>';
     
     load_template(
-        $_template_file = __DIR__ . '/pairing-saved.php',
+        $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/pairing-saved.php',
         $require_once   = true,
         $args           = array(
             'saved-pairings'  => $savedPairings

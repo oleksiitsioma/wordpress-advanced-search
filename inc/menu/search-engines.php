@@ -9,7 +9,7 @@ add_submenu_page(
     $function       = '___pas_admin_menu_search_engines'
 );
 
-require_once( __DIR__ . '/../classes/class-SearchEngine.php' );
+require_once( PAS_PLUGIN_DIR . 'inc/classes/class-SearchEngine.php' );
 
 function ___pas_admin_menu_search_engines(){ ?>
 

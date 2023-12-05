@@ -9,13 +9,13 @@
         <?php
         
         load_template(
-            $_template_file = __DIR__ . '/mapping-saved.php',
+            $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/mapping-saved.php',
             $require_once   = true,
             $args           = $args
         );
     
         load_template(
-            $_template_file = __DIR__ . '/mapping-not-saved.php',
+            $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/mapping-not-saved.php',
             $require_once   = true,
             $args           = $args
         );

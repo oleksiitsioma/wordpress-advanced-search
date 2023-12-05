@@ -9,13 +9,13 @@ add_submenu_page(
     $function       = '___pas_admin_menu_posts_mapping'
 );
 
-require_once( __DIR__ . '/../classes/class-searchMapping.php');
+require_once( PAS_PLUGIN_DIR . 'inc/classes/class-searchMapping.php');
 
 function ___pas_admin_menu_posts_mapping(){ ?>
 
 <?php
 
-require_once( __DIR__ . '/../settings/plugin-vars.php' );
+require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php' );
 
 global $wpdb , $enginesTableName;
 

@@ -22,7 +22,7 @@ function ___pas_create_admin_menu(){
     );
 
     load_template(
-        $_template_file = __DIR__ . '/search-engines.php',
+        $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-engines.php',
         $require_once   = true,
         $args           = array(
             'menu-slug' => $___pas_admin_menu_slug
@@ -30,28 +30,10 @@ function ___pas_create_admin_menu(){
     
     );
 
-    // load_template(
-    //     $_template_file = __DIR__ . '/search-mapping.php',
-    //     $require_once   = true,
-    //     $args           = array(
-    //         'menu-slug' => $___pas_admin_menu_slug
-    //     )
-    
-    // );
-
-    // load_template(
-    //     $_template_file = __DIR__ . '/blocks-mapping.php',
-    //     $require_once   = true,
-    //     $args           = array(
-    //         'menu-slug' => $___pas_admin_menu_slug
-    //     )
-    
-    // );
-
     foreach ($searchEngines as $engine) {
 
         load_template(
-            $_template_file = __DIR__ . '/search-engine-settings.php',
+            $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-engine-settings.php',
             $require_once   = true,
             $args           = array(
                 'menu-slug' => $___pas_admin_menu_slug,

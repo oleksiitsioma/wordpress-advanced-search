@@ -8,6 +8,8 @@ Plugin Name: Advanced Search
 
 // Admin Assets
 
+define( 'PAS_PLUGIN_DIR' , plugin_dir_path( __FILE__ ) );
+
 add_action( 'admin_enqueue_scripts' , '___pas_admin_scripts' );
 
 function ___pas_admin_scripts(){
@@ -43,16 +45,13 @@ function ___pas_frontend_styles(){
 
 }
 
-require_once ( __DIR__ . '/inc/db/db.php' );
+require_once ( PAS_PLUGIN_DIR . 'inc/db/db.php' );
 
 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
-require_once( __DIR__ . '/inc/settings/plugin-vars.php' );
+require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php' );
 
-
-
-
-require_once __DIR__ . '/inc/menu/menu.php';
+require_once PAS_PLUGIN_DIR . 'inc/menu/menu.php';
 
 
 global $wpdb , $enginesTableName;
