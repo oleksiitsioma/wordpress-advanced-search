@@ -2,7 +2,12 @@
 
 global $pluginDIR;
 
-require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/classes/class-SearchEngine.php' );
+load_template(
+    $_template_file = ABSPATH . 'wp-content/plugins/advanced-search/inc/classes/class-SearchEngine.php',
+    $require_once   = true
+);
+
+// require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/classes/class-SearchEngine.php' );
 require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/classes/class-SearchMapping.php' );
 require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/classes/class-SearchPairing.php' );
 require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/settings/plugin-vars.php' );
