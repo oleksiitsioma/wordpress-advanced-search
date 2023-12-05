@@ -2,11 +2,11 @@
 
 global $pluginDIR;
 
-require_once( PAS_PLUGIN_DIR . 'inc/classes/class-SearchEngine.php' );
-require_once( PAS_PLUGIN_DIR . 'inc/classes/class-SearchMapping.php' );
-require_once( PAS_PLUGIN_DIR . 'inc/classes/class-SearchPairing.php' );
-require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php' );
-require_once( PAS_PLUGIN_DIR . 'inc/functions/functions.php' );
+require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/classes/class-SearchEngine.php' );
+require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/classes/class-SearchMapping.php' );
+require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/classes/class-SearchPairing.php' );
+require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/settings/plugin-vars.php' );
+require_once( ABSPATH . 'wp-content/plugins/advanced-search/inc/functions/functions.php' );
 
 $engine = $args['engine'];
 
