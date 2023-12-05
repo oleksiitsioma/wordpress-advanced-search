@@ -107,11 +107,9 @@ function ___pas_admin_menu_search_settings(){
     
                         $pairing = new SearchPairing(
                             $engine_name        = $engine_name,
-                            $post_reference     = $_POST[ 'post-name-'     . $id ],
                             $import_post_name   = $_POST[ 'import-post-name-'   . $id ],
+                            $post_reference     = $_POST[ 'post-name-'     . $id ],
                             $is_block_level     = 0,
-                            $import_block_name  = 'not a block',
-                            $block_label        = 'not a block',
                             $searchQueries      = serialize( $queriesArray )
                         );
 
@@ -131,13 +129,18 @@ function ___pas_admin_menu_search_settings(){
     
                         $pairing = new SearchPairing(
                             $engine_name        = $engine_name,
-                            $post_reference     = $_POST[ 'post-reference-'     . $id ],
                             $import_post_name   = $_POST[ 'import-post-name-'   . $id ],
+                            $post_reference     = $_POST[ 'post-reference-'     . $id ],
                             $is_block_level     = $_POST[ 'is-block-target-'    . $id ],
-                            $import_block_name  = $_POST[ 'import-block-name-'  . $id ],
-                            $block_label        = $_POST[ 'block-reference-'    . $id ],
-                            $searchQueries      = serialize( $queriesArray )
+                            $searchQueries      = serialize( $queriesArray ),
                         );
+
+                        if( $pairing->is_block_level){
+
+                            $pairing->import_block_name  = $_POST[ 'import-block-name-'  . $id ];
+                            $pairing->block_label        = $_POST[ 'block-reference-'    . $id ];
+
+                        }
     
                         $pairing->update_db();
 
@@ -168,6 +171,8 @@ function ___pas_admin_menu_search_settings(){
         array(
             'post_type'         => 'post',
             'posts_per_page'    => -1,
+            'orderby'           => 'title',
+            'order'             => 'ASC'
         )
     );
     
@@ -175,6 +180,8 @@ function ___pas_admin_menu_search_settings(){
         array(
             'post_type'         => 'page',
             'posts_per_page'    => -1,
+            'orderby'           => 'title',
+            'order'             => 'ASC'
         )
     );
     
@@ -182,6 +189,8 @@ function ___pas_admin_menu_search_settings(){
         array(
             'post_type'         => 'document',
             'posts_per_page'    => -1,
+            'orderby'           => 'title',
+            'order'             => 'ASC'
         )
     );
 

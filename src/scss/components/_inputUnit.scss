@@ -26,6 +26,7 @@
         border-radius: 3px;
         border: 1px solid ;
         width: 100%;
+        max-width: 100%!important;
         border-color: transparentize($color: $eerieBlack, $amount: 0.6);
         padding-top: 5px;
         padding-bottom: 5px;

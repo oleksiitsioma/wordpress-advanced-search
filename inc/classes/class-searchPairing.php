@@ -5,8 +5,8 @@ require_once( __DIR__ . '/../settings/plugin-vars.php' );
 class SearchPairing {
 
     public $engine_name;
-    public $post_reference;
     public $import_post_name;
+    public $post_reference;
     public $is_block_level;
     public $import_block_name;
     public $block_label;
@@ -14,20 +14,16 @@ class SearchPairing {
 
     function __construct(
         $engine_name,
-        $post_reference,
         $import_post_name,
+        $post_reference,
         $is_block_level,
-        $import_block_name,
-        $block_label,
         $searchQueries
     ){
         
         $this->engine_name          = $engine_name;
-        $this->post_reference       = $post_reference;
         $this->import_post_name     = $import_post_name;
+        $this->post_reference       = $post_reference;
         $this->is_block_level       = $is_block_level;
-        $this->import_block_name    = $import_block_name;
-        $this->block_label          = $block_label;
         $this->searchQueries        = $searchQueries;
     
     }
@@ -74,6 +70,14 @@ class SearchPairing {
         
         }
 
+    }
+
+    public function set_import_block_name( $import_block_name ){
+        $this->import_block_name = $import_block_name;
+    }
+
+    public function set_block_label( $block_label ){
+        $this->block_label = $block_label;
     }
 
 }
