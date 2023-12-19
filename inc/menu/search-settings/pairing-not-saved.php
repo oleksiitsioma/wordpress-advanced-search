@@ -144,7 +144,7 @@ foreach ( $mappingsFromImport as $key => $item ) {
 
                 <div class="___pasTable__entryBody colGr">
 
-                    <div class="colGr__col_12">
+                    <div class="colGr__col_12" style="display: none" >
                         <!-- Hidden Import Post Name Field -->
                         <input type="text" name="import-post-name-<?php echo $key; ?>" value="<?php echo $item[0]; ?>">
                         <!-- Hidden Indexing For Field -->
