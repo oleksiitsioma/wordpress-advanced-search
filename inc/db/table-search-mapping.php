@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Creating Search Mapping Database
+ * It holds all the Search Mapping Data. 
+ * Table fields are Engine Name, Import post name, Post type, Post reference.
+ */
+
 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
 

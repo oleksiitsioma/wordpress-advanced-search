@@ -1,4 +1,9 @@
 <?php 
+/**
+ * Creating Search Engines Database
+ * It holds all the Search Engine Data. 
+ * Table fields are Engine Name, Engine Label, Supported post types.
+ */
 
 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');

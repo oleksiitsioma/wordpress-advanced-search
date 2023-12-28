@@ -1,4 +1,7 @@
 <?php
+/**
+ * Search Engine Class
+ */
 
 require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
 
@@ -15,6 +18,10 @@ class SearchEngine {
         $this->importURL    = $importURL; 
 
     }
+
+    /**
+     * Function for updating Search Engine data in the database
+     */
 
     public function update_db(){
         

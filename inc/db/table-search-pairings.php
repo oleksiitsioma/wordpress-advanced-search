@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Creating Search Pairings Database
+ * It holds all the Search Mapping Data. 
+ * Table fields are Engine Name, Search Queries, Import post name, Post reference, If the block is targeted, Target block.
+ */
+
 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
 

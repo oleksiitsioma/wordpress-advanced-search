@@ -1,5 +1,10 @@
 <?php 
 
+/**
+ * Search Mapping Class
+ * Mappings are used to define Imported file contents 
+ */
+
 require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
 
 class SearchMapping{
@@ -17,6 +22,10 @@ class SearchMapping{
         $this->post_reference   = $post_reference;
     
     }
+
+    /**
+     * Function for updating Search Mapping data in the database
+     */
 
     public function update_db(){
 

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Search Pairing Class
+ * Used for connecting search query or array of queries to the target post or content block within a post
+ */
+
 require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
 
 class SearchPairing {
@@ -27,6 +32,10 @@ class SearchPairing {
         $this->searchQueries        = $searchQueries;
     
     }
+
+    /**
+     * Function for updating Search Pairing Data in the database
+     */
 
     public function update_db(){
 
