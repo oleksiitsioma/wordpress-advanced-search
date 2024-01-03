@@ -18,7 +18,6 @@ foreach ($savedPairings as $pairing ) {
 
         <div class="colGr__col_4 ___pasTable__column">
             <h2 class="___pasTable__entryTitle"><?php echo $pairing->import_block_name; ?></h2>
-            <p class="___pasTable__entrySubtitle">Accordion pane</p>
         </div>
 
         <div class="colGr__col_3 ___pasTable__column ___pasTable__column_spacedVertically">
