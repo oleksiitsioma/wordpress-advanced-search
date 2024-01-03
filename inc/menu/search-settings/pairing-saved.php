@@ -198,7 +198,7 @@ foreach ( $savedPairings as $pairing ) {
                         
                         foreach ( $queriesFormatted as $query ) { 
                             
-                            echo '<span class="___pasInputUint__tag">' . $query . '</span>';
+                            echo '<span class="___pasInputUint__tag">' . $query . '<button class="remove-query">Remove Query</button></span>';
 
                         }
 
@@ -210,7 +210,7 @@ foreach ( $savedPairings as $pairing ) {
         <?php } ?>
 
         <div class="colGr__col_12">
-            <input type="text" value="Update <?php echo $pairing->id; ?>">
+            <input type="submit" value="Update <?php echo $pairing->id; ?>">
         </div>
 
 
