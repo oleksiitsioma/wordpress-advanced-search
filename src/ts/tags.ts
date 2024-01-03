@@ -35,9 +35,7 @@ import $ from 'jquery';
 
 // } )
 
-const tagsContainer = $('body').find('.___pasInputUnit__tags');
-
-console.log( tagsContainer );
+const tagsContainer = $('.___pasInputUnit__tags');
 
 const tags = $(tagsContainer).find('.___pasInputUint__tag');
 
@@ -66,17 +64,14 @@ const prepareQueries = ( query ) =>{
         preparedQueriesArray.push( $(query).val() );
     }
 
-    const preparedQueriesString = preparedQueriesArray.join(', ');
+    const preparedQueriesString = preparedQueriesArray.join('; ');
+
+    console.log( preparedQueriesArray.length );
 
 
     $(allQueriesInput).val( preparedQueriesString );
 
 }
-
-for (let i = 0; i < tagsContainer.length; i++) {
-    console.log( tagsContainer[i] );    
-}
-
 
 $(tags).on( 'input' , function(){
 
@@ -85,3 +80,14 @@ $(tags).on( 'input' , function(){
     prepareQueries( queryContainer );
 
 } );
+
+$(document).ready( function(){
+    const tagsContainer = $('.___pasInputUnit__tags');
+
+    for (let i = 0; i < tagsContainer.length; i++) {
+        const queries = $([tagsContainer[i]]).find('.___pasInputUint__tag');
+        const firstQuery = $(queries[0]);
+        prepareQueries( firstQuery );
+    }
+
+})

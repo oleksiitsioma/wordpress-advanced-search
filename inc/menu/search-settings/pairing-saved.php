@@ -23,7 +23,7 @@ foreach ( $savedPairings as $pairing ) {
 
 
 
-<form class="___pasTable__entry ___pasTable__entry_openable open">
+<form class="___pasTable__entry ___pasTable__entry_openable open" method="POST" action="#">
 
     <?php $postID = $pairing->post_reference; ?>
 
@@ -51,22 +51,36 @@ foreach ( $savedPairings as $pairing ) {
 
     <div class="___pasTable__entryBody colGr">
 
-        <div class="colGr__col_6 ___pasSearchUnit">
-            <div class="___pasInputUnit">
-                <label for="example-text" class="___pasInputUnit__label">Target post</label>
-                <input
-                    type="text"
-                    class="___pasInputUnit__input"
-                    value="<?php echo get_post( $postID )->post_title ; ?>"
-                    name="post-name-<?php echo $key; ?>"
-                    readonly="readonly"
-                >
-                <p class="___pasInputUnit__hint">Choose the target WordPress post</p>
-            </div>
-        </div> 
+<div class="colGr__col_6 ___pasSearchUnit">
+    <div class="___pasInputUnit">
+        <label for="example-text" class="___pasInputUnit__label">Import post name</label>
+        <input
+            type="text"
+            class="___pasInputUnit__input"
+            value="<?php echo $pairing->import_post_name; ?>"
+            name="import-post-name-<?php echo $pairing->id; ?>"
+            readonly="readonly"
+        >
+        <p class="___pasInputUnit__hint">Choose the target WordPress post</p>
+    </div>
+</div> 
+
+<div class="colGr__col_6 ___pasSearchUnit">
+    <div class="___pasInputUnit">
+        <label for="example-text" class="___pasInputUnit__label">Target post</label>
+        <input
+            type="text"
+            class="___pasInputUnit__input"
+            value="<?php echo $pairing->post_reference ; ?>"
+            name="post-name-<?php echo $pairing->id; ?>"
+            readonly="readonly"
+        >
+        <p class="___pasInputUnit__hint">Choose the target WordPress post</p>
+    </div>
+</div> 
 
         <div class="colGr__col_12">
-            <input type="text" name="is-block-target-<?php echo $key; ?>" value="1">
+            <input type="text" name="is-block-target-<?php echo $pairing->id; ?>" value="1">
         </div>
 
         <div class="colGr__col_6 ___pasSearchUnit">
@@ -190,11 +204,10 @@ foreach ( $savedPairings as $pairing ) {
                 <div class="___pasInputUnit">
                     <label for="tags-input" class="___pasInputUnit__label">Search Queries</label>
 
-                    <input type="text" name="search-queries-<?php echo $pairing->id; ?>" value="<?php echo implode( '; ' , $queriesFormatted ); ?>" style="display: none">
 
                     <div class="___pasInputUnit__input ___pasInputUnit__input_textarea ___pasInputUnit__tags">
 
-                        <input type="text" class="all-queries">
+                        <input type="text" class="all-queries" name="search-queries-<?php echo $pairing->id; ?>" value="<?php echo implode( '; ' , $queriesFormatted ); ?>">
 
                         <?php 
                         
@@ -212,7 +225,7 @@ foreach ( $savedPairings as $pairing ) {
         <?php } ?>
 
         <div class="colGr__col_12">
-            <input type="submit" value="Update <?php echo $pairing->id; ?>">
+            <input type="submit" name="update-pairing" value="Update <?php echo $pairing->id; ?>">
         </div>
 
 

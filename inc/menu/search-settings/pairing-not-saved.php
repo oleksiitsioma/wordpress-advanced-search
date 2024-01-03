@@ -224,8 +224,8 @@ foreach ( $mappingsFromImport as $key => $item ) {
                         <div class="___pasInputUnit">
                             <label for="example-text" class="___pasInputUnit__label">Do you want to target a specific block?</label>
                             <select class="___pasInputUnit__input" name="is-block-target-<?php echo $key; ?>" id="">
-                                <option value="1" selected>yes</option>
-                                <option value="0">no</option>
+                                <option value="1">yes</option>
+                                <option value="0" selected>no</option>
                             </select>
                         </div>
                     </div>

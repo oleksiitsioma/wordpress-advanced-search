@@ -86,11 +86,11 @@ function ___pas_admin_menu_search_settings(){
 
         }
 
-        if( isset( $_POST['submit-pairing'] ) ){
+        if( isset( $_POST['submit-pairing'] ) || isset( $_POST['update-pairing'] ) ){
             
             foreach ($_POST as $key => $value) {
 
-                $prefix = 'search-queries-';
+                $prefix = 'post-name-';
 
                 if( str_contains( $key , $prefix ) ){
 
@@ -98,53 +98,50 @@ function ___pas_admin_menu_search_settings(){
 
                     if(
 
-                        isset( $_POST['is-global-' . $id] ) &&
-                        isset( $_POST['post-name-' . $id] )
+                        isset( $_POST['post-name-' . $id] ) && !empty( $_POST['post-name-' . $id] ) 
                         
                     ){
 
-                        $queries = $_POST[ 'search-queries-' . $id ];
+                        if( isset( $_POST['block-found-' . $id ] ) ){
     
-                        $queriesArray = explode( '; ' , $queries );
+                            $queries = $_POST[ 'search-queries-' . $id ];
+        
+                            $queriesArray = explode( '; ' , $queries );
+        
+                            $pairing = new SearchPairing(
+                                $engine_name        = $engine_name,
+                                $import_post_name   = $_POST[ 'import-post-name-'   . $id ],
+                                $post_reference     = $_POST[ 'post-reference-'     . $id ],
+                                $is_block_level     = $_POST[ 'is-block-target-'    . $id ],
+                                $searchQueries      = serialize( $queriesArray ),
+                            );
     
-                        $pairing = new SearchPairing(
-                            $engine_name        = $engine_name,
-                            $import_post_name   = $_POST[ 'import-post-name-'   . $id ],
-                            $post_reference     = $_POST[ 'post-name-'     . $id ],
-                            $is_block_level     = 0,
-                            $searchQueries      = serialize( $queriesArray )
-                        );
-
-                        // echo '<pre>';
-                        // print_r( $pairing );
-                        // echo '<pre>';
+                            if( $pairing->is_block_level){
     
-                        $pairing->update_db();
-
-                    }
-
-                    if( isset( $_POST['block-found-' . $id ] ) ){
-
-                        $queries = $_POST[ 'search-queries-' . $id ];
+                                $pairing->import_block_name  = $_POST[ 'import-block-name-'  . $id ];
+                                $pairing->block_label        = $_POST[ 'block-reference-'    . $id ];
     
-                        $queriesArray = explode( '; ' , $queries );
+                            }
+        
+                            $pairing->update_db();
     
-                        $pairing = new SearchPairing(
-                            $engine_name        = $engine_name,
-                            $import_post_name   = $_POST[ 'import-post-name-'   . $id ],
-                            $post_reference     = $_POST[ 'post-reference-'     . $id ],
-                            $is_block_level     = $_POST[ 'is-block-target-'    . $id ],
-                            $searchQueries      = serialize( $queriesArray ),
-                        );
-
-                        if( $pairing->is_block_level){
-
-                            $pairing->import_block_name  = $_POST[ 'import-block-name-'  . $id ];
-                            $pairing->block_label        = $_POST[ 'block-reference-'    . $id ];
-
+                        } else {
+    
+                            $queries = $_POST[ 'search-queries-' . $id ];
+        
+                            $queriesArray = explode( '; ' , $queries );
+        
+                            $pairing = new SearchPairing(
+                                $engine_name        = $engine_name,
+                                $import_post_name   = $_POST[ 'import-post-name-'   . $id ],
+                                $post_reference     = $_POST[ 'post-name-'     . $id ],
+                                $is_block_level     = 0,
+                                $searchQueries      = serialize( $queriesArray )
+                            );
+        
+                            $pairing->update_db();
+    
                         }
-    
-                        $pairing->update_db();
 
                     }
 
