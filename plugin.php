@@ -6,10 +6,17 @@ Plugin Name: Advanced Search
 
 */
 
-// Admin Assets
+// Admin Assets=
+
+/**
+ * Defining Plugin Constants
+ */
 
 define( 'PAS_PLUGIN_DIR' , ABSPATH . 'wp-content/plugins/advanced-search/' );
 
+/**
+ * Connecting plugin Resources, Defining Variables, And Creating Database Tables
+ */
 add_action( 'admin_enqueue_scripts' , '___pas_admin_scripts' );
 
 function ___pas_admin_scripts(){

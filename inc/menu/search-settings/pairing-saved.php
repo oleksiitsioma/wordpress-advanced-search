@@ -2,6 +2,21 @@
 
 $savedPairings = $args['saved-pairings'];
 
+function get_pairings_new(){
+
+    global $wpdb;
+
+    $pairings = $wpdb->get_results("
+        SELECT *
+        FROM blue_advanced_search_pairings
+    ")
+
+}
+
+echo '<pre>';
+print_r( get_pairings_new() );
+echo '</pre>';
+
 
 foreach ($savedPairings as $pairing ) {
 
