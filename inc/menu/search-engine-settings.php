@@ -21,6 +21,49 @@ add_submenu_page(
 
 );
 
+function check_queries_for_duplicates(){
+
+    global $wpdb, $pairingsTableName;
+    
+    // Get pairings
+
+
+    $pairings = $wpdb->get_results("
+        SELECT *
+        FROM {$pairingsTableName};
+    ");
+
+    $queriesArrayOfArrays   = [];
+    $queriesArrayOfElements = [];
+
+    foreach ($pairings as $pairing) {
+
+        $queries = unserialize( $pairing->search_queries );
+
+        foreach ($queries as $query) {
+
+            if( array_search( $query , $queriesArrayOfElements ) > -1 ){
+
+                $wpdb->delete(
+                    $pairingsTableName,
+                    [ "search_queries" => serialize( $queries ) ],
+                    [ "%s"]
+                );
+
+            } else {
+
+                array_push( $queriesArrayOfElements , $query );
+
+            }
+
+        }
+
+    }
+
+
+}
+
+
 function ___pas_admin_menu_search_settings(){
 
     global $wpdb, $enginesTableName, $mappingTableName , $pairingsTableName;
@@ -196,6 +239,8 @@ function ___pas_admin_menu_search_settings(){
     ?>
 
     <div class="___pas">
+
+        <?php check_queries_for_duplicates(); ?>
 
         <div class="container">
             <h1 class="___pas__title"><?php echo $engine_name; ?></h1>
