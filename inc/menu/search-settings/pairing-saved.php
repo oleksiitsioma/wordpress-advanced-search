@@ -1,7 +1,5 @@
 <?php 
 
-$savedPairings = $args['saved-pairings'];
-
 function get_pairings_new(){
 
     global $wpdb;
@@ -15,12 +13,10 @@ function get_pairings_new(){
 
 }
 
-echo '<pre>';
-print_r( get_pairings_new() );
-echo '</pre>';
+$savedPairings = get_pairings_new();
 
 
-foreach ($savedPairings as $pairing ) {
+foreach ( $savedPairings as $pairing ) {
 
 ?>
 
