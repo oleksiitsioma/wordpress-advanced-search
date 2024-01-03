@@ -23,7 +23,7 @@ foreach ( $savedPairings as $pairing ) {
 
 
 
-<div class="___pasTable__entry ___pasTable__entry_openable">
+<form class="___pasTable__entry ___pasTable__entry_openable">
 
     <?php $postID = $pairing->post_reference; ?>
 
@@ -210,7 +210,7 @@ foreach ( $savedPairings as $pairing ) {
         <?php } ?>
 
         <div class="colGr__col_12">
-            <input type="text" name="post-reference-<?php echo $key; ?>" value="<?php echo $postID; ?>" style="display: none">
+            <input type="text" value="Update <?php echo $pairing->id; ?>">
         </div>
 
 
@@ -219,6 +219,6 @@ foreach ( $savedPairings as $pairing ) {
 
     </div>
 
-</div>
+</form>
 
 <?php } ?>
