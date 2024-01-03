@@ -38,12 +38,25 @@ import $ from 'jquery';
 const tagsContainer = $('.___pasInputUnit__tags');
 
 const tags = $(tagsContainer).find('.___pasInputUint__tag');
-const tagsRemoveButtons = $(tags).find('.remove-query');
 
-$(tagsRemoveButtons).on( 'click' , function(){
+$(tags).on( 'change' , function(){
 
-    const tag = $(this).closest('.___pasInputUint__tag');
+    const sibQueries = $(this).siblings('.___pasInputUint__tag');
 
-    $(tag).remove();
+    const allQueriesInput = $(this).siblings('all-queries');
 
+    let sibQueriesArray = [];
+
+    let sibQueriesString = '';
+
+    for (let i = 0; i < sibQueries.length; i++) {
+
+        sibQueriesArray.push( $(sibQueries[i]).val() );
+
+    }
+
+    sibQueriesString = sibQueriesArray.join( ', ' );
+
+    $(allQueriesInput).val(sibQueriesString);
+    
 })

@@ -194,6 +194,8 @@ foreach ( $savedPairings as $pairing ) {
 
                     <div class="___pasInputUnit__input ___pasInputUnit__input_textarea ___pasInputUnit__tags">
 
+                        <input type="text" class="all-queries">
+
                         <?php 
                         
                         foreach ( $queriesFormatted as $query ) { 
