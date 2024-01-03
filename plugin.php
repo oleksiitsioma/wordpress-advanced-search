@@ -2,7 +2,7 @@
 
 /*
 
-Plugin Name: Advanced Search
+Plugin Name: Pivot Advanced Search
 
 */
 
@@ -13,6 +13,7 @@ Plugin Name: Advanced Search
  */
 
 define( 'PAS_PLUGIN_DIR' , ABSPATH . 'wp-content/plugins/advanced-search/' );
+define( 'PAS_PLUGIN_DIR_URL' , plugin_dir_url( __FILE__ ) );
 
 /**
  * Connecting plugin Resources, Defining Variables, And Creating Database Tables
@@ -23,7 +24,7 @@ function ___pas_admin_scripts(){
 
     wp_enqueue_script(
         $handle     = 'pas',
-        $src        = plugin_dir_url( __FILE__ ) . 'build/bundle-script.js',
+        $src        = PAS_PLUGIN_DIR_URL . 'build/bundle-script.js',
         $deps       = array('jquery'),
         $ver        = null,
         $in_footer  = true
@@ -31,7 +32,7 @@ function ___pas_admin_scripts(){
 
     wp_enqueue_style(
         $handle     = 'pas',
-        $src        = plugin_dir_url( __FILE__ ) . 'build/bundle-style.css',
+        $src        = PAS_PLUGIN_DIR_URL . 'build/bundle-style.css',
         $deps       = null,
         $ver        = null
     );

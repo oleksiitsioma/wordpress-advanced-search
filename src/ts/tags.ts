@@ -35,28 +35,53 @@ import $ from 'jquery';
 
 // } )
 
-const tagsContainer = $('.___pasInputUnit__tags');
+const tagsContainer = $('body').find('.___pasInputUnit__tags');
+
+console.log( tagsContainer );
 
 const tags = $(tagsContainer).find('.___pasInputUint__tag');
 
-$(tags).on( 'change' , function(){
+const prepareQueries = ( query ) =>{
+    
+    const allQueriesInput   = $(query).siblings('.all-queries');
 
-    const sibQueries = $(this).siblings('.___pasInputUint__tag');
+    $(allQueriesInput).val('')
 
-    const allQueriesInput = $(this).siblings('all-queries');
+    const querySibs         = $(query).siblings('.___pasInputUint__tag');
 
-    let sibQueriesArray = [];
+    let preparedQueriesArray = [];
 
-    let sibQueriesString = '';
+    for (let i = 0; i < querySibs.length; i++) {
 
-    for (let i = 0; i < sibQueries.length; i++) {
+        if( $(querySibs[i]).val().length > 0 ){
 
-        sibQueriesArray.push( $(sibQueries[i]).val() );
+            preparedQueriesArray.push( $(querySibs[i]).val() );
 
+        }
+        
     }
 
-    sibQueriesString = sibQueriesArray.join( ', ' );
+    if( $(query).val().length > 0 ){
 
-    $(allQueriesInput).val(sibQueriesString);
-    
-})
+        preparedQueriesArray.push( $(query).val() );
+    }
+
+    const preparedQueriesString = preparedQueriesArray.join(', ');
+
+
+    $(allQueriesInput).val( preparedQueriesString );
+
+}
+
+for (let i = 0; i < tagsContainer.length; i++) {
+    console.log( tagsContainer[i] );    
+}
+
+
+$(tags).on( 'input' , function(){
+
+    const queryContainer = this;
+
+    prepareQueries( queryContainer );
+
+} );

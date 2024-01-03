@@ -190,7 +190,7 @@ foreach ( $savedPairings as $pairing ) {
                 <div class="___pasInputUnit">
                     <label for="tags-input" class="___pasInputUnit__label">Search Queries</label>
 
-                    <input type="text" name="search-queries-<?php echo $key; ?>" value="<?php echo implode( '; ' , $queriesFormatted ); ?>" style="display: none">
+                    <input type="text" name="search-queries-<?php echo $pairing->id; ?>" value="<?php echo implode( '; ' , $queriesFormatted ); ?>" style="display: none">
 
                     <div class="___pasInputUnit__input ___pasInputUnit__input_textarea ___pasInputUnit__tags">
 
