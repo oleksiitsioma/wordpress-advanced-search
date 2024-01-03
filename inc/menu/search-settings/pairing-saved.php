@@ -11,6 +11,8 @@ function get_pairings_new(){
         FROM blue_advanced_search_pairings
     ");
 
+    return $pairings;
+
 }
 
 echo '<pre>';
