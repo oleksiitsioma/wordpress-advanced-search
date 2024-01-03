@@ -23,17 +23,14 @@ load_template(
 
 
 
-if( $savedPairings ){
 
-    echo 'saved pairings';
-    echo '<br>';
-    
-    load_template(
-        $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/pairing-saved.php',
-        $require_once   = true,
-        $args           = array(
-            'saved-pairings'  => $savedPairings
-        )
-    );
+echo 'saved pairings';
+echo '<br>';
 
-}
+load_template(
+    $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/pairing-saved.php',
+    $require_once   = true,
+    $args           = array(
+        'saved-pairings'  => $savedPairings
+    )
+);

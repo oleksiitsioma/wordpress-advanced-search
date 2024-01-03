@@ -9,7 +9,7 @@ function get_pairings_new(){
     $pairings = $wpdb->get_results("
         SELECT *
         FROM blue_advanced_search_pairings
-    ")
+    ");
 
 }
 
