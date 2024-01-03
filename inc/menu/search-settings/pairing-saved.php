@@ -23,7 +23,7 @@ foreach ( $savedPairings as $pairing ) {
 
 
 
-<form class="___pasTable__entry ___pasTable__entry_openable">
+<form class="___pasTable__entry ___pasTable__entry_openable open">
 
     <?php $postID = $pairing->post_reference; ?>
 
@@ -192,7 +192,7 @@ foreach ( $savedPairings as $pairing ) {
 
                     <input type="text" name="search-queries-<?php echo $key; ?>" value="<?php echo implode( '; ' , $queriesFormatted ); ?>" style="display: none">
 
-                    <div class="___pasInputUnit__input ___pasInputUnit__input_textarea ___pasInputUnit__tags" id="tags">
+                    <div class="___pasInputUnit__input ___pasInputUnit__input_textarea ___pasInputUnit__tags">
 
                         <?php 
                         

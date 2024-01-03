@@ -115,7 +115,7 @@ foreach ( $mappingsFromImport as $key => $item ) {
             ?>
 
 
-            <div class="___pasTable__entry ___pasTable__entry_openable open">
+            <div class="___pasTable__entry ___pasTable__entry_openable">
 
 
                 <div class="___pasTable__entryHeader colGr">
