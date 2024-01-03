@@ -198,7 +198,7 @@ foreach ( $savedPairings as $pairing ) {
                         
                         foreach ( $queriesFormatted as $query ) { 
                             
-                            echo '<span class="___pasInputUint__tag">' . $query . '<span class="remove-query">Remove Query</span></span>';
+                            echo '<input class="___pasInputUint__tag" value="' . $query . '"></input>';
 
                         }
 
