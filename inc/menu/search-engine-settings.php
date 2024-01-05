@@ -40,20 +40,25 @@ function check_queries_for_duplicates(){
 
         $queries = unserialize( $pairing->search_queries );
 
-        foreach ($queries as $query) {
+        
+        if( $queries ){
 
-            if( array_search( $query , $queriesArrayOfElements ) > -1 ){
-
-                $wpdb->delete(
-                    $pairingsTableName,
-                    [ "search_queries" => serialize( $queries ) ],
-                    [ "%s"]
-                );
-
-            } else {
-
-                array_push( $queriesArrayOfElements , $query );
-
+            foreach ($queries as $query) {
+    
+                if( array_search( $query , $queriesArrayOfElements ) > -1 ){
+    
+                    $wpdb->delete(
+                        $pairingsTableName,
+                        [ "search_queries" => serialize( $queries ) ],
+                        [ "%s"]
+                    );
+    
+                } else {
+    
+                    array_push( $queriesArrayOfElements , $query );
+    
+                }
+    
             }
 
         }
