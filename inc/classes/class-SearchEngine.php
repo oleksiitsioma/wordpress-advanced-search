@@ -3,7 +3,7 @@
  * Search Engine Class
  */
 
-require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
+require_once( WAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
 
 class SearchEngine {
 

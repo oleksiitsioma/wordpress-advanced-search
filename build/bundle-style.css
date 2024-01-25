@@ -68,11 +68,11 @@
   grid-column-end: span 12;
 }
 
-.___pas {
+.___was {
   font-family: "Montserrat", sans-serif;
 }
 
-.___pas {
+.___was {
   height: 100%;
 }
 
@@ -80,30 +80,30 @@
   background-color: rgb(231, 238, 250);
 }
 
-.___pasTable .colGr {
+.___wasTable .colGr {
   row-gap: 20px;
 }
-.___pasTable__entry {
+.___wasTable__entry {
   background-color: white;
   margin-bottom: 10px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.03);
 }
-.___pasTable__entry:hover, .___pasTable__entry.open {
+.___wasTable__entry:hover, .___wasTable__entry.open {
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.1);
 }
-.___pasTable__entry.open .___pasTable__entryBody {
+.___wasTable__entry.open .___wasTable__entryBody {
   max-height: none;
   height: auto;
   padding-top: 25px;
   padding-bottom: 25px;
   opacity: 1;
 }
-.___pasTable__entry.openable .___pasTable__entryHeader {
+.___wasTable__entry.openable .___wasTable__entryHeader {
   cursor: pointer;
 }
-.___pasTable__entryHeader {
+.___wasTable__entryHeader {
   background-color: white;
   padding-left: 30px;
   padding-right: 30px;
@@ -111,7 +111,7 @@
   padding-bottom: 15px;
   cursor: pointer;
 }
-.___pasTable__entryBody {
+.___wasTable__entryBody {
   background-color: rgb(245, 247, 251);
   padding-left: 30px;
   padding-right: 30px;
@@ -121,17 +121,17 @@
   opacity: 0;
   transition: all 0.3s ease;
 }
-.___pasTable__entryTitle {
+.___wasTable__entryTitle {
   margin-top: 0px;
   margin-bottom: 10px;
   font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.5rem;
 }
-.___pasTable__entrySubtitle {
+.___wasTable__entrySubtitle {
   margin: 0;
 }
-.___pasTable__header {
+.___wasTable__header {
   min-height: 40px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -141,28 +141,28 @@
   background-color: rgb(245, 247, 251);
   box-shadow: none;
 }
-.___pasTable__column_header {
+.___wasTable__column_header {
   font-weight: 600;
   color: rgb(146, 151, 165);
 }
-.___pasTable__column_spacedVertically {
+.___wasTable__column_spacedVertically {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.___pasInputUnit {
+.___wasInputUnit {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   cursor: pointer;
 }
-.___pasInputUnit__label {
+.___wasInputUnit__label {
   font-size: 0.875rem;
   cursor: pointer;
   margin-bottom: 5px;
 }
-.___pasInputUnit__hint {
+.___wasInputUnit__hint {
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -170,7 +170,7 @@
   margin-top: 5px;
   margin-bottom: 0px;
 }
-.___pasInputUnit__input {
+.___wasInputUnit__input {
   border-radius: 3px;
   border: 1px solid;
   width: 100%;
@@ -181,24 +181,24 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-.___pasInputUnit__input.hidden {
+.___wasInputUnit__input.hidden {
   display: none;
 }
-.___pasInputUnit__input_textarea {
+.___wasInputUnit__input_textarea {
   resize: none;
 }
-.___pasInputUnit__input:active {
+.___wasInputUnit__input:active {
   border-color: #7EA3CC;
   outline: none;
 }
-.___pasInputUnit__tags {
+.___wasInputUnit__tags {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid;
   padding: 10px;
   gap: 5px;
 }
-.___pasInputUnit__tags span {
+.___wasInputUnit__tags span {
   background-color: rgba(0, 0, 255, 0.2);
   padding: 5px 7px;
   font-size: 13px;
@@ -206,16 +206,16 @@
   display: flex;
   align-items: center;
 }
-.___pasInputUnit__tags input {
+.___wasInputUnit__tags input {
   flex: 0 0 100%;
   margin-top: 5px;
 }
 
-.___pasDropdownOptions {
+.___wasDropdownOptions {
   width: 100%;
   position: relative;
 }
-.___pasDropdownOptions__input {
+.___wasDropdownOptions__input {
   width: 100%;
   max-width: 100% !important;
 }

@@ -1,4 +1,4 @@
-.___pasTable{
+.___wasTable{
 
     .colGr{
         row-gap: 20px;
@@ -21,7 +21,7 @@
 
         &.open{
 
-            .___pasTable__entryBody{
+            .___wasTable__entryBody{
                 max-height: none;
                 height: auto;
                 padding-top: 25px;
@@ -33,7 +33,7 @@
 
         &.openable{
 
-            .___pasTable{
+            .___wasTable{
 
                 &__entry{
 

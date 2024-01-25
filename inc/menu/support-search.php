@@ -6,10 +6,10 @@ add_submenu_page(
     $menu_title     = 'Support Search',
     $capability     = 'administrator',
     $menu_slug      = 'support-search',
-    $function       = '___pas_admin_menu_support_search'
+    $function       = '___was_admin_menu_support_search'
 );
 
-function ___pas_admin_menu_support_search(){
+function ___was_admin_menu_support_search(){
     
     global $wpdb;
 
@@ -57,21 +57,21 @@ function ___pas_admin_menu_support_search(){
 ?>
 
 
-<div class="___pas">
+<div class="___was">
 
     <div class="container container_fullWidth">
-        <h1 class="___pas__title">Support Search</h1>
+        <h1 class="___was__title">Support Search</h1>
     </div>
 
     <div class="container">
 
-        <div class="___pasTable">
+        <div class="___wasTable">
 
-            <div class="___pasTable__entry ___pasTable__header colGr">
-                <div class="colGr__col_4 ___pasTable__column ___pasTable__column_header">Target Block</div>
-                <div class="colGr__col_3 ___pasTable__column ___pasTable__column_header">Target Post</div>
-                <div class="colGr__col_3 ___pasTable__column ___pasTable__column_header">Status</div>
-                <div class="colGr__col_2 ___pasTable__column ___pasTable__column_header"></div>
+            <div class="___wasTable__entry ___wasTable__header colGr">
+                <div class="colGr__col_4 ___wasTable__column ___wasTable__column_header">Target Block</div>
+                <div class="colGr__col_3 ___wasTable__column ___wasTable__column_header">Target Post</div>
+                <div class="colGr__col_3 ___wasTable__column ___wasTable__column_header">Status</div>
+                <div class="colGr__col_2 ___wasTable__column ___wasTable__column_header"></div>
             </div>
 
             <form action="#" method="POST">
@@ -140,7 +140,7 @@ function ___pas_admin_menu_support_search(){
                         
                         ?>
                 
-                        <div class="___pasTable__entry ___pasTable__entry_openable">
+                        <div class="___wasTable__entry ___wasTable__entry_openable">
         
                             <?php
                             
@@ -149,51 +149,51 @@ function ___pas_admin_menu_support_search(){
                             ?>
 
 
-                            <div class="___pasTable__entryHeader colGr">
+                            <div class="___wasTable__entryHeader colGr">
 
-                                <div class="colGr__col_4 ___pasTable__column">
-                                    <h2 class="___pasTable__entryTitle"><?php echo $data[2]; ?></h2>
-                                    <p class="___pasTable__entrySubtitle">Accordion pane</p>
+                                <div class="colGr__col_4 ___wasTable__column">
+                                    <h2 class="___wasTable__entryTitle"><?php echo $data[2]; ?></h2>
+                                    <p class="___wasTable__entrySubtitle">Accordion pane</p>
                                 </div>
 
-                                <div class="colGr__col_3 ___pasTable__column ___pasTable__column_spacedVertically">
-                                    <p class="___pasTable__entryTitle"><?php echo $data[0]; ?></p>
-                                    <p class="___pasTable__entrySubtitle">
+                                <div class="colGr__col_3 ___wasTable__column ___wasTable__column_spacedVertically">
+                                    <p class="___wasTable__entryTitle"><?php echo $data[0]; ?></p>
+                                    <p class="___wasTable__entrySubtitle">
                                         <?php echo get_the_title( $postID ) . ' - ' . $postID ; ?>
                                     </p>
                                 </div>
 
-                                <div class="colGr__col_3 ___pasTable__column">
+                                <div class="colGr__col_3 ___wasTable__column">
 
-                                    <p class="___pasTable__entrySubtitle">
+                                    <p class="___wasTable__entrySubtitle">
                                         Total queries - <?php echo sizeof( $queriesFormatted ); ?>
                                     </p>
                                     
                                 </div>
 
-                                <div class="colGr__col_2 ___pasTable__column">
+                                <div class="colGr__col_2 ___wasTable__column">
                                 </div>
 
                             </div>
-                            <div class="___pasTable__entryBody colGr">
+                            <div class="___wasTable__entryBody colGr">
 
-                                <div class="colGr__col_6 ___pasSearchUnit">
-                                    <div class="___pasInputUnit">
-                                        <label for="example-text" class="___pasInputUnit__label">Target post</label>
-                                        <p class="___pasInputUnit__hint">Choose the target WordPress post</p>
-                                        <input type="text" class="___pasInputUnit__input" id="example-text" value="<?php echo get_the_title( $postID ); ?>" readonly="readonly">
+                                <div class="colGr__col_6 ___wasSearchUnit">
+                                    <div class="___wasInputUnit">
+                                        <label for="example-text" class="___wasInputUnit__label">Target post</label>
+                                        <p class="___wasInputUnit__hint">Choose the target WordPress post</p>
+                                        <input type="text" class="___wasInputUnit__input" id="example-text" value="<?php echo get_the_title( $postID ); ?>" readonly="readonly">
                                     </div>
                                 </div>
 
                                 <?php if( $data[1] == 'Dropdown TXT' ) { ?>
 
-                                <div class="colGr__col_6 ___pasSearchUnit">
-                                    <div class="___pasInputUnit">
-                                        <label for="example-text" class="___pasInputUnit__label">Target block</label>
-                                        <p class="___pasInputUnit__hint">Choose the target block within a post</p>
+                                <div class="colGr__col_6 ___wasSearchUnit">
+                                    <div class="___wasInputUnit">
+                                        <label for="example-text" class="___wasInputUnit__label">Target block</label>
+                                        <p class="___wasInputUnit__hint">Choose the target block within a post</p>
                                         <input
                                             type="text"
-                                            class="___pasInputUnit__input"
+                                            class="___wasInputUnit__input"
                                             id="example-text"
                                             name="<?php echo $pairingCounter; ?>-block"
                                             value="<?php echo $data[2]; ?>"
@@ -206,24 +206,24 @@ function ___pas_admin_menu_support_search(){
                                 
                                 if ( $queriesFormatted ) { ?>
 
-                                    <div class="colGr__col_12 ___pasSearchUnit">
-                                        <div class="___pasInputUnit">
-                                            <label for="tags-input" class="___pasInputUnit__label">Search Queries</label>
+                                    <div class="colGr__col_12 ___wasSearchUnit">
+                                        <div class="___wasInputUnit">
+                                            <label for="tags-input" class="___wasInputUnit__label">Search Queries</label>
 
                                             <input type="text" name="<?php echo $pairingCounter; ?>-queries" value="<?php echo implode( '; ' , $queriesFormatted ); ?>" style="display: none">
 
-                                            <div class="___pasInputUnit__input ___pasInputUnit__input_textarea ___pasInputUnit__tags" id="tags">
+                                            <div class="___wasInputUnit__input ___wasInputUnit__input_textarea ___wasInputUnit__tags" id="tags">
 
                                                 <?php 
                                                 
                                                 foreach ($queriesFormatted as $query) { 
                                                     
-                                                    echo '<span class="___pasInputUint__tag">' . $query . '</span>';
+                                                    echo '<span class="___wasInputUint__tag">' . $query . '</span>';
 
                                                 }
 
                                                 ?>
-                                                <!-- <input type="text" class="___pasInputUnit__input" id="tags-input"> -->
+                                                <!-- <input type="text" class="___wasInputUnit__input" id="tags-input"> -->
                                             </div>
                                         </div>
                                     </div>

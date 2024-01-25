@@ -115,34 +115,34 @@ foreach ( $mappingsFromImport as $key => $item ) {
             ?>
 
 
-            <div class="___pasTable__entry ___pasTable__entry_openable">
+            <div class="___wasTable__entry ___wasTable__entry_openable">
 
 
-                <div class="___pasTable__entryHeader colGr">
+                <div class="___wasTable__entryHeader colGr">
 
-                    <div class="colGr__col_4 ___pasTable__column">
-                        <h2 class="___pasTable__entryTitle"><?php echo $item[2]; ?></h2>
-                        <p class="___pasTable__entrySubtitle">Accordion pane</p>
+                    <div class="colGr__col_4 ___wasTable__column">
+                        <h2 class="___wasTable__entryTitle"><?php echo $item[2]; ?></h2>
+                        <p class="___wasTable__entrySubtitle">Accordion pane</p>
                     </div>
 
-                    <div class="colGr__col_3 ___pasTable__column ___pasTable__column_spacedVertically">
-                        <p class="___pasTable__entryTitle"><?php echo $item[0]; ?></p>
-                        <p class="___pasTable__entrySubtitle">
+                    <div class="colGr__col_3 ___wasTable__column ___wasTable__column_spacedVertically">
+                        <p class="___wasTable__entryTitle"><?php echo $item[0]; ?></p>
+                        <p class="___wasTable__entrySubtitle">
                             <?php echo get_post( $postID )->post_title . ' - ' . $postID ; ?>
                         </p>
                     </div>
 
-                    <div class="colGr__col_3 ___pasTable__column">
-                        <p class="___pasTable__entrySubtitle">Total queries</p>
-                        <p class="___pasTable__entrySubtitle"><?php if ( $blockFound ) { echo 'block found'; } ?></p>
+                    <div class="colGr__col_3 ___wasTable__column">
+                        <p class="___wasTable__entrySubtitle">Total queries</p>
+                        <p class="___wasTable__entrySubtitle"><?php if ( $blockFound ) { echo 'block found'; } ?></p>
                     </div>
 
-                    <div class="colGr__col_2 ___pasTable__column">
+                    <div class="colGr__col_2 ___wasTable__column">
                     </div>
 
                 </div>
 
-                <div class="___pasTable__entryBody colGr">
+                <div class="___wasTable__entryBody colGr">
 
                     <div class="colGr__col_12" style="display: none" >
                         <!-- Hidden Import Post Name Field -->
@@ -157,10 +157,10 @@ foreach ( $mappingsFromImport as $key => $item ) {
                         <input type="text" value="<?php echo $blockFound; ?>" name="block-found-<?php echo $key; ?>">
                     </div>
 
-                    <div class="colGr__col_12 ___pasSearchUnit">
-                        <div class="___pasInputUnit">
-                            <label for="example-text" class="___pasInputUnit__label">Target post</label>
-                            <select class="___pasInputUnit__input" name="post-name-<?php echo $key; ?>" id="">
+                    <div class="colGr__col_12 ___wasSearchUnit">
+                        <div class="___wasInputUnit">
+                            <label for="example-text" class="___wasInputUnit__label">Target post</label>
+                            <select class="___wasInputUnit__input" name="post-name-<?php echo $key; ?>" id="">
                                 <option disabled selected>Select Document</option>
                                 <?php
 
@@ -216,29 +216,29 @@ foreach ( $mappingsFromImport as $key => $item ) {
                                     
                                 ?>
                             </select>
-                            <p class="___pasInputUnit__hint">Choose the target WordPress post</p>
+                            <p class="___wasInputUnit__hint">Choose the target WordPress post</p>
                         </div>
                     </div>
 
-                    <div class="colGr__col_3 ___pasSearchUnit">
-                        <div class="___pasInputUnit">
-                            <label for="example-text" class="___pasInputUnit__label">Do you want to target a specific block?</label>
-                            <select class="___pasInputUnit__input" name="is-block-target-<?php echo $key; ?>" id="">
+                    <div class="colGr__col_3 ___wasSearchUnit">
+                        <div class="___wasInputUnit">
+                            <label for="example-text" class="___wasInputUnit__label">Do you want to target a specific block?</label>
+                            <select class="___wasInputUnit__input" name="is-block-target-<?php echo $key; ?>" id="">
                                 <option value="1">yes</option>
                                 <option value="0" selected>no</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="colGr__col_9 ___pasSearchUnit">
-                        <div class="___pasInputUnit">
-                            <label for="example-text" class="___pasInputUnit__label">Inner blocks</label>
+                    <div class="colGr__col_9 ___wasSearchUnit">
+                        <div class="___wasInputUnit">
+                            <label for="example-text" class="___wasInputUnit__label">Inner blocks</label>
                             <?php 
                             
 
                             ?>
 
-                            <select class="___pasInputUnit__input" name="block-reference-<?php echo $key; ?>" id="">
+                            <select class="___wasInputUnit__input" name="block-reference-<?php echo $key; ?>" id="">
 
                                 <?php
                                 
@@ -281,9 +281,9 @@ foreach ( $mappingsFromImport as $key => $item ) {
                         </div>
                     </div>
 
-                    <!-- <div class="colGr__col_12 ___pasSearchUnit">
-                        <div class="___pasInputUnit">
-                            <label for="example-text" class="___pasInputUnit__label">Target block</label>
+                    <!-- <div class="colGr__col_12 ___wasSearchUnit">
+                        <div class="___wasInputUnit">
+                            <label for="example-text" class="___wasInputUnit__label">Target block</label>
                             <?php 
                             
                             // $targetBlockName                = $item[2];
@@ -293,31 +293,31 @@ foreach ( $mappingsFromImport as $key => $item ) {
                             ?>
                             <input
                                 type="text"
-                                class="___pasInputUnit__input"
+                                class="___wasInputUnit__input"
                                 id="example-text"
                                 value="<?php // echo $targetBlockNameEscapedLower; ?>"
                                 name=""
                                 readonly="readonly"
                             >
-                            <p class="___pasInputUnit__hint">Choose the target block within a post</p>
+                            <p class="___wasInputUnit__hint">Choose the target block within a post</p>
                         </div>
                     </div> -->
 
                     <?php if ( $queriesFormatted ) { ?>
 
-                        <div class="colGr__col_12 ___pasSearchUnit">
-                            <div class="___pasInputUnit">
-                                <label for="tags-input" class="___pasInputUnit__label">Search Queries</label>
+                        <div class="colGr__col_12 ___wasSearchUnit">
+                            <div class="___wasInputUnit">
+                                <label for="tags-input" class="___wasInputUnit__label">Search Queries</label>
 
                                 <input type="text" name="search-queries-<?php echo $key; ?>" value="<?php echo implode( '; ' , $queriesFormatted ); ?>" style="display: none">
 
-                                <div class="___pasInputUnit__input ___pasInputUnit__input_textarea ___pasInputUnit__tags" id="tags">
+                                <div class="___wasInputUnit__input ___wasInputUnit__input_textarea ___wasInputUnit__tags" id="tags">
 
                                     <?php 
                                     
                                     foreach ( $queriesFormatted as $query ) { 
                                         
-                                        echo '<span class="___pasInputUint__tag">' . $query . '</span>';
+                                        echo '<span class="___wasInputUint__tag">' . $query . '</span>';
 
                                     }
 

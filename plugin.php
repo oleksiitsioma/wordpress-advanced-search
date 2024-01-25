@@ -2,37 +2,39 @@
 
 /*
 
-Plugin Name: Pivot Advanced Search
+Plugin Name: Wordpress Advanced Search
+Author: Oleksii Tsioma
+Author URI: https://github.com/oleksiitsioma/
 
 */
 
-// Admin Assets=
+// Admin Assets
 
 /**
  * Defining Plugin Constants
  */
 
-define( 'PAS_PLUGIN_DIR' , ABSPATH . 'wp-content/plugins/advanced-search/' );
-define( 'PAS_PLUGIN_DIR_URL' , plugin_dir_url( __FILE__ ) );
+define( 'WAS_PLUGIN_DIR' , ABSPATH . 'wp-content/plugins/advanced-search/' );
+define( 'WAS_PLUGIN_DIR_URL' , plugin_dir_url( __FILE__ ) );
 
 /**
  * Connecting plugin Resources, Defining Variables, And Creating Database Tables
  */
-add_action( 'admin_enqueue_scripts' , '___pas_admin_scripts' );
+add_action( 'admin_enqueue_scripts' , '___was_admin_scripts' );
 
-function ___pas_admin_scripts(){
+function ___was_admin_scripts(){
 
     wp_enqueue_script(
-        $handle     = 'pas',
-        $src        = PAS_PLUGIN_DIR_URL . 'build/bundle-script.js',
+        $handle     = 'was',
+        $src        = WAS_PLUGIN_DIR_URL . 'build/bundle-script.js',
         $deps       = array('jquery'),
         $ver        = null,
         $in_footer  = true
     );
 
     wp_enqueue_style(
-        $handle     = 'pas',
-        $src        = PAS_PLUGIN_DIR_URL . 'build/bundle-style.css',
+        $handle     = 'was',
+        $src        = WAS_PLUGIN_DIR_URL . 'build/bundle-style.css',
         $deps       = null,
         $ver        = null
     );
@@ -40,12 +42,12 @@ function ___pas_admin_scripts(){
 }
 // Frontend Assets
 
-add_action( 'wp_enqueue_scripts' , '___pas_frontend_styles' );
+add_action( 'wp_enqueue_scripts' , '___was_frontend_styles' );
 
-function ___pas_frontend_styles(){
+function ___was_frontend_styles(){
 
     wp_enqueue_style(
-        $handle     = 'pas-frontend',
+        $handle     = 'was-frontend',
         $src        = plugin_dir_url( __FILE__ ) . '/build/frontend-style.css',
         $deps       = null,
         $ver        = null
@@ -69,7 +71,7 @@ $searchEnginesSQL = "SELECT * FROM {$enginesTableName}";
 $searchEngines = $wpdb->get_results( $searchEnginesSQL );
 
 
-function ___pas_admin_menu_page(){
+function ___was_admin_menu_page(){
 
     global $wpdb;
 

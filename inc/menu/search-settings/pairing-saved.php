@@ -23,59 +23,59 @@ foreach ( $savedPairings as $pairing ) {
 
 
 
-<form class="___pasTable__entry ___pasTable__entry_openable open" method="POST" action="#">
+<form class="___wasTable__entry ___wasTable__entry_openable open" method="POST" action="#">
 
     <?php $postID = $pairing->post_reference; ?>
 
-    <div class="___pasTable__entryHeader colGr">
+    <div class="___wasTable__entryHeader colGr">
 
-        <div class="colGr__col_4 ___pasTable__column">
-            <h2 class="___pasTable__entryTitle"><?php echo $pairing->import_block_name; ?></h2>
+        <div class="colGr__col_4 ___wasTable__column">
+            <h2 class="___wasTable__entryTitle"><?php echo $pairing->import_block_name; ?></h2>
         </div>
 
-        <div class="colGr__col_3 ___pasTable__column ___pasTable__column_spacedVertically">
-            <p class="___pasTable__entryTitle"><?php echo $pairing->import_post_name; ?></p>
-            <p class="___pasTable__entrySubtitle">
+        <div class="colGr__col_3 ___wasTable__column ___wasTable__column_spacedVertically">
+            <p class="___wasTable__entryTitle"><?php echo $pairing->import_post_name; ?></p>
+            <p class="___wasTable__entrySubtitle">
                 <?php echo get_post( $postID )->post_title . ' - ' . $postID ; ?>
             </p>
         </div>
 
-        <div class="colGr__col_3 ___pasTable__column">
-            <p class="___pasTable__entrySubtitle">Total queries</p>
+        <div class="colGr__col_3 ___wasTable__column">
+            <p class="___wasTable__entrySubtitle">Total queries</p>
         </div>
 
-        <div class="colGr__col_2 ___pasTable__column">
+        <div class="colGr__col_2 ___wasTable__column">
         </div>
 
     </div>
 
-    <div class="___pasTable__entryBody colGr">
+    <div class="___wasTable__entryBody colGr">
 
-<div class="colGr__col_6 ___pasSearchUnit">
-    <div class="___pasInputUnit">
-        <label for="example-text" class="___pasInputUnit__label">Import post name</label>
+<div class="colGr__col_6 ___wasSearchUnit">
+    <div class="___wasInputUnit">
+        <label for="example-text" class="___wasInputUnit__label">Import post name</label>
         <input
             type="text"
-            class="___pasInputUnit__input"
+            class="___wasInputUnit__input"
             value="<?php echo $pairing->import_post_name; ?>"
             name="import-post-name-<?php echo $pairing->id; ?>"
             readonly="readonly"
         >
-        <p class="___pasInputUnit__hint">Choose the target WordPress post</p>
+        <p class="___wasInputUnit__hint">Choose the target WordPress post</p>
     </div>
 </div> 
 
-<div class="colGr__col_6 ___pasSearchUnit">
-    <div class="___pasInputUnit">
-        <label for="example-text" class="___pasInputUnit__label">Target post</label>
+<div class="colGr__col_6 ___wasSearchUnit">
+    <div class="___wasInputUnit">
+        <label for="example-text" class="___wasInputUnit__label">Target post</label>
         <input
             type="text"
-            class="___pasInputUnit__input"
+            class="___wasInputUnit__input"
             value="<?php echo $pairing->post_reference ; ?>"
             name="post-name-<?php echo $pairing->id; ?>"
             readonly="readonly"
         >
-        <p class="___pasInputUnit__hint">Choose the target WordPress post</p>
+        <p class="___wasInputUnit__hint">Choose the target WordPress post</p>
     </div>
 </div> 
 
@@ -83,24 +83,24 @@ foreach ( $savedPairings as $pairing ) {
             <input type="text" name="is-block-target-<?php echo $pairing->id; ?>" value="1">
         </div>
 
-        <div class="colGr__col_6 ___pasSearchUnit">
-            <div class="___pasInputUnit">
-                <label for="example-text" class="___pasInputUnit__label">Target block</label>
+        <div class="colGr__col_6 ___wasSearchUnit">
+            <div class="___wasInputUnit">
+                <label for="example-text" class="___wasInputUnit__label">Target block</label>
                 <input
                     type="text"
-                    class="___pasInputUnit__input"
+                    class="___wasInputUnit__input"
                     id="example-text"
                     value="<?php echo $pairing->block_id; ?>"
                     name=""
                     readonly="readonly"
                 >
-                <p class="___pasInputUnit__hint">Choose the target block within a post</p>
+                <p class="___wasInputUnit__hint">Choose the target block within a post</p>
             </div>
         </div>
 
-        <div class="colGr__col_6 ___pasSearchUnit">
-            <div class="___pasInputUnit">
-                <label for="example-text" class="___pasInputUnit__label">Inner blocks</label>
+        <div class="colGr__col_6 ___wasSearchUnit">
+            <div class="___wasInputUnit">
+                <label for="example-text" class="___wasInputUnit__label">Inner blocks</label>
                 <?php 
 
                 $blockFound = false;
@@ -179,9 +179,9 @@ foreach ( $savedPairings as $pairing ) {
             </div>
         </div>
 
-        <div class="colGr__col_6 ___pasSearchUnit">
-            <div class="___pasInputUnit">
-                <label for="example-text" class="___pasInputUnit__label">Target block</label>
+        <div class="colGr__col_6 ___wasSearchUnit">
+            <div class="___wasInputUnit">
+                <label for="example-text" class="___wasInputUnit__label">Target block</label>
                 <p><?php if( $blockFound ) { echo 'block found' ; } ?></p>
             </div>
         </div>
@@ -200,12 +200,12 @@ foreach ( $savedPairings as $pairing ) {
         
         if ( $queriesFormatted ) { ?>
 
-            <div class="colGr__col_12 ___pasSearchUnit">
-                <div class="___pasInputUnit">
-                    <label for="tags-input" class="___pasInputUnit__label">Search Queries</label>
+            <div class="colGr__col_12 ___wasSearchUnit">
+                <div class="___wasInputUnit">
+                    <label for="tags-input" class="___wasInputUnit__label">Search Queries</label>
 
 
-                    <div class="___pasInputUnit__input ___pasInputUnit__input_textarea ___pasInputUnit__tags">
+                    <div class="___wasInputUnit__input ___wasInputUnit__input_textarea ___wasInputUnit__tags">
 
                         <input type="text" class="all-queries" name="search-queries-<?php echo $pairing->id; ?>" value="<?php echo implode( '; ' , $queriesFormatted ); ?>">
 
@@ -213,7 +213,7 @@ foreach ( $savedPairings as $pairing ) {
                         
                         foreach ( $queriesFormatted as $query ) { 
                             
-                            echo '<input class="___pasInputUint__tag" value="' . $query . '"></input>';
+                            echo '<input class="___wasInputUint__tag" value="' . $query . '"></input>';
 
                         }
 

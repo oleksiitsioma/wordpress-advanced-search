@@ -6,16 +6,16 @@ add_submenu_page(
     $menu_title     = 'Posts Mapping',
     $capability     = 'administrator',
     $menu_slug      = 'posts-mapping',
-    $function       = '___pas_admin_menu_posts_mapping'
+    $function       = '___was_admin_menu_posts_mapping'
 );
 
-require_once( PAS_PLUGIN_DIR . 'inc/classes/class-searchMapping.php');
+require_once( WAS_PLUGIN_DIR . 'inc/classes/class-searchMapping.php');
 
-function ___pas_admin_menu_posts_mapping(){ ?>
+function ___was_admin_menu_posts_mapping(){ ?>
 
 <?php
 
-require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php' );
+require_once( WAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php' );
 
 global $wpdb , $enginesTableName;
 
@@ -88,21 +88,21 @@ global $wpdb , $enginesTableName;
 
 
 
-<div class="___pas">
+<div class="___was">
 
     <div class="container">
-        <h1 class="___pas__title">Search Mappings</h1>
+        <h1 class="___was__title">Search Mappings</h1>
     </div>
 
     <div class="container">
 
-        <div class="___pasTable">
+        <div class="___wasTable">
 
-            <div class="___pasTable__entry ___pasTable__header colGr">
-                <div class="colGr__col_3 ___pasTable__column ___pasTable__column_header">Post name</div>
-                <div class="colGr__col_3 ___pasTable__column ___pasTable__column_header">Post Type</div>
-                <div class="colGr__col_4 ___pasTable__column ___pasTable__column_header">Post Reference</div>
-                <div class="colGr__col_2 ___pasTable__column ___pasTable__column_header"></div>
+            <div class="___wasTable__entry ___wasTable__header colGr">
+                <div class="colGr__col_3 ___wasTable__column ___wasTable__column_header">Post name</div>
+                <div class="colGr__col_3 ___wasTable__column ___wasTable__column_header">Post Type</div>
+                <div class="colGr__col_4 ___wasTable__column ___wasTable__column_header">Post Reference</div>
+                <div class="colGr__col_2 ___wasTable__column ___wasTable__column_header"></div>
             </div>
             mapped posts
             <?php
@@ -111,17 +111,17 @@ global $wpdb , $enginesTableName;
               
 
             ?>
-                <form class="___pasTable__entry" action="#" method="POST">
-                    <div class="___pasTable__entryHeader colGr">
-                        <div class="colGr__col_3 ___pasTable__column post-name">
-                            <h2 class="___pasTable__entryTitle"><?php echo $item->import_post_name; ?></h2>
+                <form class="___wasTable__entry" action="#" method="POST">
+                    <div class="___wasTable__entryHeader colGr">
+                        <div class="colGr__col_3 ___wasTable__column post-name">
+                            <h2 class="___wasTable__entryTitle"><?php echo $item->import_post_name; ?></h2>
                             <input type="text" name="mapping-post-name" value="<?php echo $item->import_post_name; ?>">
                         </div>
-                        <div class="colGr__col_3 ___pasTable__column">
+                        <div class="colGr__col_3 ___wasTable__column">
                             <?php
 
                             ?>
-                            <select class="___pasInputUnit__input" name="mapping-post-type" data-dropdown-content="post-types">
+                            <select class="___wasInputUnit__input" name="mapping-post-type" data-dropdown-content="post-types">
 
                                 <?php
                                 
@@ -144,7 +144,7 @@ global $wpdb , $enginesTableName;
                                 ?>
                             </select>
                         </div>
-                        <div class="colGr__col_4 ___pasTable__column post-type-select-container" data-column-content="post-dropdowns">
+                        <div class="colGr__col_4 ___wasTable__column post-type-select-container" data-column-content="post-dropdowns">
 
 
                             <?php 
@@ -160,7 +160,7 @@ global $wpdb , $enginesTableName;
 
                             ?>
 
-                                <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="document-posts">
+                                <select class="___wasInputUnit__input" name="mapping-post-id" data-dropdown-content="document-posts">
 
                                     <option selected disabled>Choose Support Document</option>
 
@@ -189,7 +189,7 @@ global $wpdb , $enginesTableName;
 
                             ?>
 
-                                <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="post-posts">
+                                <select class="___wasInputUnit__input" name="mapping-post-id" data-dropdown-content="post-posts">
 
                                     <option selected disabled>Choose post</option>
 
@@ -216,7 +216,7 @@ global $wpdb , $enginesTableName;
 
                             ?>
 
-                                <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="page-posts">
+                                <select class="___wasInputUnit__input" name="mapping-post-id" data-dropdown-content="page-posts">
 
                                     <option selected disabled>Choose page</option>
 
@@ -231,7 +231,7 @@ global $wpdb , $enginesTableName;
                             <?php wp_reset_postdata(  ); } ?>
 
                         </div>
-                        <div class="colGr__col_2 ___pasTable__column ___pasTable__column_header">
+                        <div class="colGr__col_2 ___wasTable__column ___wasTable__column_header">
                             <input type="submit" name="submit" value="submit">
                         </div>
                     </div>
@@ -247,14 +247,14 @@ global $wpdb , $enginesTableName;
                 
             ?>
 
-                <form class="___pasTable__entry" action="#" method="POST">
-                    <div class="___pasTable__entryHeader colGr">
-                        <div class="colGr__col_3 ___pasTable__column post-name">
-                            <h2 class="___pasTable__entryTitle"><?php echo $item; ?></h2>
+                <form class="___wasTable__entry" action="#" method="POST">
+                    <div class="___wasTable__entryHeader colGr">
+                        <div class="colGr__col_3 ___wasTable__column post-name">
+                            <h2 class="___wasTable__entryTitle"><?php echo $item; ?></h2>
                             <input type="text" name="mapping-post-name" value="<?php echo $item; ?>">
                         </div>
-                        <div class="colGr__col_3 ___pasTable__column">
-                            <select class="___pasInputUnit__input" name="mapping-post-type" data-dropdown-content="post-types">
+                        <div class="colGr__col_3 ___wasTable__column">
+                            <select class="___wasInputUnit__input" name="mapping-post-type" data-dropdown-content="post-types">
 
                                 <?php
                                 
@@ -269,7 +269,7 @@ global $wpdb , $enginesTableName;
                                 ?>
                             </select>
                         </div>
-                        <div class="colGr__col_4 ___pasTable__column post-type-select-container" data-column-content="post-dropdowns">
+                        <div class="colGr__col_4 ___wasTable__column post-type-select-container" data-column-content="post-dropdowns">
 
 
                             <?php 
@@ -285,7 +285,7 @@ global $wpdb , $enginesTableName;
 
                             ?>
 
-                                <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="document-posts">
+                                <select class="___wasInputUnit__input" name="mapping-post-id" data-dropdown-content="document-posts">
 
                                     <option selected disabled>Choose Support Document</option>
 
@@ -314,7 +314,7 @@ global $wpdb , $enginesTableName;
 
                             ?>
 
-                                <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="post-posts">
+                                <select class="___wasInputUnit__input" name="mapping-post-id" data-dropdown-content="post-posts">
 
                                     <option selected disabled>Choose post</option>
 
@@ -341,7 +341,7 @@ global $wpdb , $enginesTableName;
 
                             ?>
 
-                                <select class="___pasInputUnit__input" name="mapping-post-id" data-dropdown-content="page-posts">
+                                <select class="___wasInputUnit__input" name="mapping-post-id" data-dropdown-content="page-posts">
 
                                     <option selected disabled>Choose page</option>
 
@@ -356,7 +356,7 @@ global $wpdb , $enginesTableName;
                             <?php wp_reset_postdata(  ); } ?>
 
                         </div>
-                        <div class="colGr__col_2 ___pasTable__column ___pasTable__column_header">
+                        <div class="colGr__col_2 ___wasTable__column ___wasTable__column_header">
                             <input type="submit" name="submit" value="submit">
                         </div>
                     </div>

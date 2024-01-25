@@ -1,6 +1,6 @@
 import $ from 'jquery'
 
-const autocompleteOptions = $('body').find('.___pasAutocomplete__options');
+const autocompleteOptions = $('body').find('.___wasAutocomplete__options');
 
 console.log( autocompleteOptions );
 

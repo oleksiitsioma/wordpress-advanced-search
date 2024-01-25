@@ -17,7 +17,7 @@ add_submenu_page(
     $menu_title     = $engine->engine_label,
     $capability     = 'administrator',
     $menu_slug      = $engine->engine_name,
-    $function       = '___pas_admin_menu_search_settings'
+    $function       = '___was_admin_menu_search_settings'
 
 );
 
@@ -69,7 +69,7 @@ function check_queries_for_duplicates(){
 }
 
 
-function ___pas_admin_menu_search_settings(){
+function ___was_admin_menu_search_settings(){
 
     global $wpdb, $enginesTableName, $mappingTableName , $pairingsTableName;
     $engine_name = $_GET['page'];
@@ -243,12 +243,12 @@ function ___pas_admin_menu_search_settings(){
 
     ?>
 
-    <div class="___pas">
+    <div class="___was">
 
         <?php check_queries_for_duplicates(); ?>
 
         <div class="container">
-            <h1 class="___pas__title"><?php echo $engine_name; ?></h1>
+            <h1 class="___was__title"><?php echo $engine_name; ?></h1>
         </div>
 
         <div class="container container_fullWidth colGr searchSettings__container">
@@ -256,12 +256,12 @@ function ___pas_admin_menu_search_settings(){
             <div class="colGr__col_3 searchSettings__nav"></div>
             <div class="colGr__col_9 searchSettings__content">
 
-                <div class="___pasTable">
+                <div class="___wasTable">
 
                     <?php 
 
                     load_template(
-                        $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/mapping.php', $require_once   = true,
+                        $_template_file = WAS_PLUGIN_DIR . 'inc/menu/search-settings/mapping.php', $require_once   = true,
                         $args           = array(
                             'mappingsSQL'               => $mappingsSQL,
                             'mappingsFromImportTitles'  => $mappingsFromImportTitles,
@@ -272,7 +272,7 @@ function ___pas_admin_menu_search_settings(){
                     );
 
                     load_template(
-                        $_template_file = PAS_PLUGIN_DIR . 'inc/menu/search-settings/pairings.php',
+                        $_template_file = WAS_PLUGIN_DIR . 'inc/menu/search-settings/pairings.php',
                         $require_once   = true,
                         $args           = array(
                             'mappingsFromImport'    => $mappingsFromImport,

@@ -5,7 +5,7 @@
  * Used for connecting search query or array of queries to the target post or content block within a post
  */
 
-require_once( PAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
+require_once( WAS_PLUGIN_DIR . 'inc/settings/plugin-vars.php');
 
 class SearchPairing {
 

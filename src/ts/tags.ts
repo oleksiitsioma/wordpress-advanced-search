@@ -24,7 +24,7 @@ import $ from 'jquery';
 //         const newQuery = $(tagsInput).val().trim();
 
 //         const span = $(`<span></span>`);
-//         $(span).addClass('___pasInputUint__tag');
+//         $(span).addClass('___wasInputUint__tag');
 //         $(span).text( newQuery );
 
 //         $(tagsInput).before(span);
@@ -35,9 +35,9 @@ import $ from 'jquery';
 
 // } )
 
-const tagsContainer = $('.___pasInputUnit__tags');
+const tagsContainer = $('.___wasInputUnit__tags');
 
-const tags = $(tagsContainer).find('.___pasInputUint__tag');
+const tags = $(tagsContainer).find('.___wasInputUint__tag');
 
 const prepareQueries = ( query ) =>{
     
@@ -45,7 +45,7 @@ const prepareQueries = ( query ) =>{
 
     $(allQueriesInput).val('')
 
-    const querySibs         = $(query).siblings('.___pasInputUint__tag');
+    const querySibs         = $(query).siblings('.___wasInputUint__tag');
 
     let preparedQueriesArray = [];
 
@@ -82,10 +82,10 @@ $(tags).on( 'input' , function(){
 } );
 
 $(document).ready( function(){
-    const tagsContainer = $('.___pasInputUnit__tags');
+    const tagsContainer = $('.___wasInputUnit__tags');
 
     for (let i = 0; i < tagsContainer.length; i++) {
-        const queries = $([tagsContainer[i]]).find('.___pasInputUint__tag');
+        const queries = $([tagsContainer[i]]).find('.___wasInputUint__tag');
         const firstQuery = $(queries[0]);
         prepareQueries( firstQuery );
     }

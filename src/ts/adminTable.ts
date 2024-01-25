@@ -1,11 +1,11 @@
 import $ from 'jquery'
 
-const entryOpenableHeaders = $('.___pasTable__entry_openable .___pasTable__entryHeader');
+const entryOpenableHeaders = $('.___wasTable__entry_openable .___wasTable__entryHeader');
 
 $(entryOpenableHeaders).on( 'click' , function() {
 
-    const parentSelector = $(this).closest('.___pasTable__entry');
-    const parentSiblings = $(parentSelector).siblings('.___pasTable__entry');
+    const parentSelector = $(this).closest('.___wasTable__entry');
+    const parentSiblings = $(parentSelector).siblings('.___wasTable__entry');
 
     if( $(parentSelector).hasClass('open') ){
 
@@ -21,15 +21,15 @@ $(entryOpenableHeaders).on( 'click' , function() {
 
 } )
 
-const postTypeDropdowns = $('.___pasInputUnit_postType select');
+const postTypeDropdowns = $('.___wasInputUnit_postType select');
 
 const dynamicPostTypeDropdown = ( select ) => {
 
     const val = $(select).val();
 
-    const postTypeInputUnit = $(select).closest('.___pasInputUnit_postType');
+    const postTypeInputUnit = $(select).closest('.___wasInputUnit_postType');
 
-    const postIDInputUnit = $( postTypeInputUnit ).siblings('.___pasInputUnit_postID');
+    const postIDInputUnit = $( postTypeInputUnit ).siblings('.___wasInputUnit_postID');
 
     const selectors = $(postIDInputUnit).find(`select`);
 

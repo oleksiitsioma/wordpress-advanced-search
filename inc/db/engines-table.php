@@ -1,8 +1,8 @@
 <?php
 
-register_activation_hook( __FILE__ , '___pas_create_engines_table' );
+register_activation_hook( __FILE__ , '___was_create_engines_table' );
 
-function ___pas_create_engines_table(){
+function ___was_create_engines_table(){
 
     global $wpdb;
 

@@ -27,18 +27,18 @@ $documentsArray             = $args['documentsArray'];
         
     ?>
         <div class="colGr">
-            <div class="colGr__col_3 ___pasTable__column ___pasInputUnit ___pasInputUnit_postName">
-                <label class="___pasInputUnit__label">Post reference</label>
+            <div class="colGr__col_3 ___wasTable__column ___wasInputUnit ___wasInputUnit_postName">
+                <label class="___wasInputUnit__label">Post reference</label>
                 <input
-                    class="___pasInputUnit__input"
+                    class="___wasInputUnit__input"
                     type="text"
                     value="<?php echo $mapping; ?>"
                     name="mapping-post-name-<?php echo $key; ?>"
                 >
             </div>
-            <div class="colGr__col_3 ___pasTable__column ___pasInputUnit ___pasInputUnit_postType">
-                <label for="engine-label" class="___pasInputUnit__label">Post type</label>
-                <select class="___pasInputUnit__input" name="mapping-post-type-<?php echo $key; ?>">
+            <div class="colGr__col_3 ___wasTable__column ___wasInputUnit ___wasInputUnit_postType">
+                <label for="engine-label" class="___wasInputUnit__label">Post type</label>
+                <select class="___wasInputUnit__input" name="mapping-post-type-<?php echo $key; ?>">
                     <?php
                     
                     $postTypes = [ 'document' , 'post' , 'page' , 'global' ];
@@ -52,10 +52,10 @@ $documentsArray             = $args['documentsArray'];
                     ?>
                 </select>
             </div>
-            <div class="colGr__col_6 ___pasTable__column ___pasInputUnit ___pasInputUnit_postID">
-                <label class="___pasInputUnit__label">Post reference</label>
+            <div class="colGr__col_6 ___wasTable__column ___wasInputUnit ___wasInputUnit_postID">
+                <label class="___wasInputUnit__label">Post reference</label>
                 <select
-                    class="___pasInputUnit__input"
+                    class="___wasInputUnit__input"
                     name="mapping-post-id-<?php echo $key; ?>"
                     data-dropdown-content="posts-document"
                 >
@@ -71,7 +71,7 @@ $documentsArray             = $args['documentsArray'];
 
                     ?>
                 </select>
-                <select class="___pasInputUnit__input" name="mapping-post-id-<?php echo $key; ?>" data-dropdown-content="posts-post">
+                <select class="___wasInputUnit__input" name="mapping-post-id-<?php echo $key; ?>" data-dropdown-content="posts-post">
                     <?php
                         
                     echo '<option selected disabled>Select Post</option>';
@@ -84,7 +84,7 @@ $documentsArray             = $args['documentsArray'];
 
                     ?>
                 </select>
-                <select class="___pasInputUnit__input" name="mapping-post-id-<?php echo $key; ?>" data-dropdown-content="posts-page">
+                <select class="___wasInputUnit__input" name="mapping-post-id-<?php echo $key; ?>" data-dropdown-content="posts-page">
                     <?php
                         
                     echo '<option selected disabled>Select Page</option>';
